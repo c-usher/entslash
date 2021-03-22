@@ -1,0 +1,293 @@
+{
+	"textures": [
+		{
+			"image": "environment_tiles-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 492,
+				"h": 627
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Tree 01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 257
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 6,
+						"w": 226,
+						"h": 246
+					},
+					"frame": {
+						"x": 20,
+						"y": 20,
+						"w": 226,
+						"h": 246
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Tree 02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 19,
+						"w": 186,
+						"h": 230
+					},
+					"frame": {
+						"x": 286,
+						"y": 20,
+						"w": 186,
+						"h": 230
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Tree 03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 21,
+						"w": 156,
+						"h": 226
+					},
+					"frame": {
+						"x": 286,
+						"y": 290,
+						"w": 156,
+						"h": 226
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Grass 01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 123,
+						"h": 48
+					},
+					"frame": {
+						"x": 20,
+						"y": 306,
+						"w": 123,
+						"h": 48
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Fence 02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 63,
+						"h": 44
+					},
+					"frame": {
+						"x": 183,
+						"y": 306,
+						"w": 63,
+						"h": 44
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Stump 03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 18,
+						"w": 62,
+						"h": 40
+					},
+					"frame": {
+						"x": 183,
+						"y": 390,
+						"w": 62,
+						"h": 40
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Fence 01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 5,
+						"w": 121,
+						"h": 49
+					},
+					"frame": {
+						"x": 20,
+						"y": 394,
+						"w": 121,
+						"h": 49
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Stump 02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 9,
+						"w": 61,
+						"h": 49
+					},
+					"frame": {
+						"x": 181,
+						"y": 470,
+						"w": 61,
+						"h": 49
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Grass 02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 13,
+						"w": 61,
+						"h": 34
+					},
+					"frame": {
+						"x": 20,
+						"y": 483,
+						"w": 61,
+						"h": 34
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Stump 01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 7,
+						"w": 60,
+						"h": 50
+					},
+					"frame": {
+						"x": 20,
+						"y": 557,
+						"w": 60,
+						"h": 50
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Stump 04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 20,
+						"w": 60,
+						"h": 38
+					},
+					"frame": {
+						"x": 282,
+						"y": 556,
+						"w": 60,
+						"h": 38
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Fence 03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 57,
+						"h": 44
+					},
+					"frame": {
+						"x": 382,
+						"y": 556,
+						"w": 57,
+						"h": 44
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Grass 03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 15,
+						"w": 57,
+						"h": 34
+					},
+					"frame": {
+						"x": 120,
+						"y": 559,
+						"w": 57,
+						"h": 34
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:f1daf431e7b0cd0b7ed4ca00768e865e:598435e0d32096857565dff6bb110af6:ed36272d2c9f991cadf9ddb05493ef56$"
+	}
+}

@@ -1,0 +1,272 @@
+{
+	"textures": [
+		{
+			"image": "environment_tiles2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 826,
+				"h": 256
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Log.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 2,
+						"w": 111,
+						"h": 123
+					},
+					"frame": {
+						"x": 13,
+						"y": 13,
+						"w": 111,
+						"h": 123
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Rock 05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 2,
+						"w": 46,
+						"h": 60
+					},
+					"frame": {
+						"x": 13,
+						"y": 162,
+						"w": 46,
+						"h": 60
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Rock 03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 4,
+						"w": 109,
+						"h": 58
+					},
+					"frame": {
+						"x": 85,
+						"y": 162,
+						"w": 109,
+						"h": 58
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Rock 01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 6,
+						"w": 98,
+						"h": 116
+					},
+					"frame": {
+						"x": 150,
+						"y": 13,
+						"w": 98,
+						"h": 116
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Graveyard.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 4,
+						"w": 47,
+						"h": 58
+					},
+					"frame": {
+						"x": 220,
+						"y": 155,
+						"w": 47,
+						"h": 58
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Well.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 14,
+						"w": 100,
+						"h": 113
+					},
+					"frame": {
+						"x": 274,
+						"y": 13,
+						"w": 100,
+						"h": 113
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Rock 04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 5,
+						"w": 54,
+						"h": 53
+					},
+					"frame": {
+						"x": 293,
+						"y": 152,
+						"w": 54,
+						"h": 53
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Rock 02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 10,
+						"w": 118,
+						"h": 108
+					},
+					"frame": {
+						"x": 400,
+						"y": 13,
+						"w": 118,
+						"h": 108
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Spikes.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 16,
+						"w": 108,
+						"h": 96
+					},
+					"frame": {
+						"x": 400,
+						"y": 147,
+						"w": 108,
+						"h": 96
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Ground 03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 11,
+						"w": 120,
+						"h": 105
+					},
+					"frame": {
+						"x": 544,
+						"y": 13,
+						"w": 120,
+						"h": 105
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Ground 01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 15,
+						"w": 234,
+						"h": 98
+					},
+					"frame": {
+						"x": 544,
+						"y": 144,
+						"w": 234,
+						"h": 98
+					}
+				},
+				{
+					"filename": "Top-Down Forest Tileset_Environment - Ground 02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 14,
+						"w": 123,
+						"h": 97
+					},
+					"frame": {
+						"x": 690,
+						"y": 13,
+						"w": 123,
+						"h": 97
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:5336c3384e7a03c8ac886ab4a3eae619:55d8b28b61997206523fda2641935ca1:b8d5734de67a1f7ac20dbbd3702bad06$"
+	}
+}
