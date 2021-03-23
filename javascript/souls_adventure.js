@@ -1,4 +1,5 @@
-import WorldScene from './WorldScene.js';
+import WorldScene from './scenes/WorldScene.js';
+// import Hero from './scenes/Hero.js'
 
 
 const config = {
