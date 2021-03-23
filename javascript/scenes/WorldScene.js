@@ -4,7 +4,7 @@ export default class WorldScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.tilemapTiledJSON("map", "/assets/world_map/world_map.json");
+    this.load.tilemapTiledJSON("map", "/assets/json/world_map.json");
 
     this.load.image("building_tiles", "/assets/world_map/building_tiles-0.png");
 
@@ -31,9 +31,7 @@ export default class WorldScene extends Phaser.Scene {
 
   create() {
     const map = this.make.tilemap({
-      key: "map",
-      tileWidth: 32,
-      tileHeight: 32,
+      key: "map"
     });
 
     const building_tiles = map.addTilesetImage(
@@ -69,25 +67,8 @@ export default class WorldScene extends Phaser.Scene {
       building_tiles,
     ];
 
-    map.createLayer("grass_land", tiles);
-    map.createLayer("behind12", tiles);
-    map.createLayer("land2", tiles);
-    map.createLayer("behind11", tiles);
-    map.createLayer("behind10", tiles);
-    map.createLayer("behind9", tiles);
-    map.createLayer("behind8", tiles);
-    map.createLayer("rocks_behind7", tiles);
-    map.createLayer("trees_behind6", tiles);
-    map.createLayer("trees_behind5", tiles);
-    map.createLayer("trees_behind4", tiles);
-    map.createLayer("trees_behind3", tiles);
-    map.createLayer("trees_behind2", tiles);
-    map.createLayer("trees_behind1", tiles);
-    map.createLayer("small_decor2", tiles);
-    map.createLayer("buildings", tiles);
-    map.createLayer("trees_front1", tiles);
-    map.createLayer("small_decor1", tiles);
-    map.createLayer("trees_front2", tiles);
-    map.createLayer("trees_front3", tiles);
+    const belowLayer = map.createLayer('below', tiles);
+    const midLayer = map.createLayer('mid', tiles);
+    const aboveLayer = map.createLayer('above', tiles);
   }
 }
