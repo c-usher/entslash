@@ -67,8 +67,12 @@ export default class WorldScene extends Phaser.Scene {
       building_tiles,
     ];
 
-    const belowLayer = map.createLayer('below', tiles);
-    const midLayer = map.createLayer('mid', tiles);
     const aboveLayer = map.createLayer('above', tiles);
+    const midLayer = map.createLayer('mid', tiles);
+    const belowLayer = map.createLayer('below', tiles);
+    aboveLayer.scale = 0.5;
+    midLayer.scale = 0.5;
+    belowLayer.scale = 0.5;
   }
+ 
 }
