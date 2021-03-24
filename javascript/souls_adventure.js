@@ -1,5 +1,4 @@
 import WorldScene from "./scenes/WorldScene.js";
-import Hero from "./scenes/Hero.js";
 
 const config = {
   width: 1280,
@@ -10,9 +9,14 @@ const config = {
   type: Phaser.AUTO,
   parent: "game",
   pixelArt: true,
-  physics: { default: "arcade" },
+  physics: {
+    default: "arcade",
+    arcade: {
+      gravity: { y: 0 },
+      debug: false,
+    },
+  },
   scene: [WorldScene],
-  autoCenter: Phaser.Scale.CENTER_BOTH
 };
 
 new Phaser.Game(config);

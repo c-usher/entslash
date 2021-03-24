@@ -1,9 +1,15 @@
+
 export default class WorldScene extends Phaser.Scene {
   constructor() {
     super("WorldScene");
   }
 
   preload() {
+
+    this.load.spritesheet('hero', '../../assets/sprites/hero_sprite.png', {
+      frameWidth: 16,
+      frameHeight: 16
+  })
     this.load.tilemapTiledJSON("map", "/assets/json/world_map.json");
 
     this.load.image("building_tiles", "/assets/world_map/building_tiles-0.png");
@@ -66,10 +72,10 @@ export default class WorldScene extends Phaser.Scene {
       environment_tiles_2,
       building_tiles,
     ];
-
-    const aboveLayer = map.createLayer('above', tiles);
-    const midLayer = map.createLayer('mid', tiles);
     const belowLayer = map.createLayer('below', tiles);
+    const midLayer = map.createLayer('mid', tiles);
+    const aboveLayer = map.createLayer('above', tiles);
+    
     aboveLayer.scale = 0.5;
     midLayer.scale = 0.5;
     belowLayer.scale = 0.5;
