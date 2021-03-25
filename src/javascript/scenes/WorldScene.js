@@ -1,4 +1,4 @@
-
+import Hero from './Hero'
 export default class WorldScene extends Phaser.Scene {
   constructor() {
     super("WorldScene");
@@ -37,8 +37,8 @@ export default class WorldScene extends Phaser.Scene {
     );
 
       this.load.spritesheet('heroSheet', '/src/assets/sprites/hero_sprite.png', {
-        frameWidth: 16,
-        frameHeight: 16
+        frameWidth: 30,
+        frameHeight: 30
       });
   }
 
@@ -80,13 +80,17 @@ export default class WorldScene extends Phaser.Scene {
       building_tiles,
     ];
 
-   const belowLayer = map.createLayer('below', tiles);
+    const belowLayer = map.createLayer('below', tiles);
     const midLayer = map.createLayer('mid', tiles);
     const aboveLayer = map.createLayer('above', tiles);
-    aboveLayer.scale = 0.5;
-    midLayer.scale = 0.5;
-    belowLayer.scale = 0.5;
+    //aboveLayer.scale = 0.5;
+    //midLayer.scale = 0.5;
+  //belowLayer.scale = 0.5;
+  
+  this.hero = new Hero(this, 200, 200, 'heroSheet')
   }
+  
+ 
 
  
 }
