@@ -1,0 +1,22 @@
+class Being extends phaser.GameObjects.Sprite {
+  constructor(scene, x, y, textureKey, type) {
+    super(scene, x, y, textureKey)
+    console.log(this)
+
+    this.scene = scene
+    this.textureKey = textureKey
+    this.scene.add.existing(this);
+    this.scene.physics.world.enableBody(this, 0);
+    this.type = type;
+    this.isDead = false;
+  }
+
+  killed() {
+    if (!this.isDead) {
+      this.isDead = true
+      this.destroy()
+      console.log("Being has died")
+    }
+  }
+}
+exports.Being = Being;
