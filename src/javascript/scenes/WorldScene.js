@@ -1,5 +1,5 @@
-import Hero from './Hero'
-class WorldScene extends Phaser.Scene {
+
+export default class WorldScene extends Phaser.Scene {
   constructor() {
     super("WorldScene");
   }
@@ -12,31 +12,31 @@ class WorldScene extends Phaser.Scene {
     this.hero
     this.keys
 
-    this.load.tilemapTiledJSON("map", "/assets/json/world_map.json");
+    this.load.tilemapTiledJSON("map", "/src/assets/json/world_map.json");
 
-    this.load.image("building_tiles", "/assets/world_map/building_tiles-0.png");
+    this.load.image("building_tiles", "/src/assets/world_map/building_tiles-0.png");
 
     this.load.image(
       "environment_tiles_1",
-      "/assets/world_map/environment_tiles-0.png"
+      "/src/assets/world_map/environment_tiles-0.png"
     );
 
     this.load.image(
       "environment_tiles_2",
-      "/assets/world_map/environment_tiles2.png"
+      "/src/assets/world_map/environment_tiles2.png"
     );
 
     this.load.image(
       "ground_tiles_1",
-      "/assets/world_map/ground_tile_set-0.png"
+      "/src/assets/world_map/ground_tile_set-0.png"
     );
 
     this.load.image(
       "ground_tiles_2",
-      "/assets/world_map/ground_tile_set-1.png"
+      "/src/assets/world_map/ground_tile_set-1.png"
     );
 
-      this.load.spritesheet('heroSheet', '../../assets/sprites/hero_sprite.png', {
+      this.load.spritesheet('heroSheet', '/src/assets/sprites/hero_sprite.png', {
         frameWidth: 16,
         frameHeight: 16
       });
@@ -90,4 +90,3 @@ class WorldScene extends Phaser.Scene {
 
  
 }
-exports.WorldScene = WorldScene;

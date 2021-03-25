@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-
+import WorldScene from './javascript/scenes/WorldScene'
 
 
 const config = {
