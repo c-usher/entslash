@@ -5,6 +5,13 @@ export default class WorldScene extends Phaser.Scene {
   }
 
   preload() {
+
+    this.cursors
+    this.cameras.main.setBackgroundColor(0x9900e3)
+
+    this.hero
+    this.keys
+    
     this.load.tilemapTiledJSON("map", "/assets/json/world_map.json");
 
     this.load.image("building_tiles", "/assets/world_map/building_tiles-0.png");
@@ -28,6 +35,11 @@ export default class WorldScene extends Phaser.Scene {
       "ground_tiles_2",
       "/assets/world_map/ground_tile_set-1.png"
     );
+
+      this.load.spritesheet('heroSheet', '../../assets/sprites/hero_sprite.png', {
+        frameWidth: 16,
+        frameHeight: 16
+      });
   }
 
   create() {
@@ -75,5 +87,6 @@ export default class WorldScene extends Phaser.Scene {
     midLayer.scale = 0.5;
     belowLayer.scale = 0.5;
   }
+  
  
 }

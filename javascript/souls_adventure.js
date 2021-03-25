@@ -1,14 +1,10 @@
 import WorldScene from "./scenes/WorldScene.js";
 
+
 const config = {
   width: 1280,
   height: 720,
-  render: {
-    antialias: false,
-  },
   type: Phaser.AUTO,
-  parent: "game",
-  pixelArt: true,
   physics: {
     default: "arcade",
     arcade: {
@@ -16,6 +12,13 @@ const config = {
       debug: false,
     },
   },
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    parent: "game"
+
+  },
+  pixelArt: true,
   scene: [WorldScene],
 };
 
