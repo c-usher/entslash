@@ -43,7 +43,7 @@ export default class WorldScene extends Phaser.Scene {
         endFrame: 11
       });
       
-  }
+  }//preload;
 
   create() {
     // this.heroSprite.scale = 20;
@@ -93,7 +93,13 @@ export default class WorldScene extends Phaser.Scene {
   
     this.hero = new Hero(this, 200, 200, 'heroSheet')
     this.hero.scale = 1.6;
+  }//create;
+
+  update() {
+    this.hero.update();
   }
+
+
   
  
 
