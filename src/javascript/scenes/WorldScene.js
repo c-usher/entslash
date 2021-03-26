@@ -36,13 +36,17 @@ export default class WorldScene extends Phaser.Scene {
       "/src/assets/world_map/ground_tile_set-1.png"
     );
 
-      this.load.spritesheet('heroSheet', '/src/assets/sprites/hero_sprite.png', {
-        frameWidth: 30,
-        frameHeight: 30
+     this.load.spritesheet('heroSheet', '/src/assets/sprites/hero_sprite.png', {
+        frameWidth: 18,
+        frameHeight: 25,
+        startFrame: 0,
+        endFrame: 11
       });
+      
   }
 
   create() {
+    // this.heroSprite.scale = 20;
     const map = this.make.tilemap({
       key: "map"
     });
@@ -83,9 +87,9 @@ export default class WorldScene extends Phaser.Scene {
     const belowLayer = map.createLayer('below', tiles);
     const midLayer = map.createLayer('mid', tiles);
     const aboveLayer = map.createLayer('above', tiles);
-    //aboveLayer.scale = 0.5;
-    //midLayer.scale = 0.5;
-  //belowLayer.scale = 0.5;
+    aboveLayer.scale = 0.5;
+    midLayer.scale = 0.5;
+  belowLayer.scale = 0.5;
   
   this.hero = new Hero(this, 200, 200, 'heroSheet')
   }

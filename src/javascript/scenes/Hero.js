@@ -8,21 +8,21 @@ export default class Hero extends Being {
 
     anims.create({
       key: "hero_up",
-      frames: anims.generateFrameNumbers(this.textureKey, { start: 1, end: 3 }),
+      frames: anims.generateFrameNumbers(this.textureKey, { start: 0, end: 2 }),
       frameRate: animsFrameRate,
       repeat: -1,
     });
 
     anims.create({
       key: "hero_down",
-      frames: anims.generateFrameNumbers(this.textureKey, { start: 4, end: 6 }),
+      frames: anims.generateFrameNumbers(this.textureKey, { start: 3, end: 5 }),
       frameRate: animsFrameRate,
       repeat: -1,
     });
 
     anims.create({
       key: "hero_left",
-      frames: anims.generateFrameNumbers(this.textureKey, { start: 7, end: 9 }),
+      frames: anims.generateFrameNumbers(this.textureKey, { start: 6, end: 8 }),
       frameRate: animsFrameRate,
       repeat: -1,
     });
@@ -30,8 +30,8 @@ export default class Hero extends Being {
     anims.create({
       key: "hero_right",
       frames: anims.generateFrameNumbers(this.textureKey, {
-        start: 10,
-        end: 12,
+        start: 9,
+        end: 11,
       }),
       frameRate: animsFrameRate,
       repeat: -1,
