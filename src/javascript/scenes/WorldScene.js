@@ -37,7 +37,7 @@ export default class WorldScene extends Phaser.Scene {
     );
 
      this.load.spritesheet('heroSheet', '/src/assets/sprites/hero_sprite.png', {
-        frameWidth: 18,
+        frameWidth: 20,
         frameHeight: 25,
         startFrame: 0,
         endFrame: 11
@@ -46,7 +46,6 @@ export default class WorldScene extends Phaser.Scene {
   }//preload;
 
   create() {
-    // this.heroSprite.scale = 20;
     const map = this.make.tilemap({
       key: "map"
     });
@@ -89,7 +88,7 @@ export default class WorldScene extends Phaser.Scene {
     const aboveLayer = map.createLayer('above', tiles);
     aboveLayer.scale = 0.5;
     midLayer.scale = 0.5;
-  belowLayer.scale = 0.5;
+    belowLayer.scale = 0.5;
   
     this.hero = new Hero(this, 200, 200, 'heroSheet')
     this.hero.scale = 1.6;

@@ -38,10 +38,10 @@ export default class Hero extends Being {
     });
     // this.setFrame(this.idleFrame.down)
     this.idleFrame = {
-      up: 3,
-      down: 6,
-      left: 9,
-      right: 12,
+      up: 2,
+      down: 5,
+      left: 8,
+      right: 11,
     };
     this.setFrame(this.idleFrame.down);
 
