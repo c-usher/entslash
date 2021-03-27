@@ -6,8 +6,11 @@ const config = {
     width: 1280,
     height: 720,
     type: Phaser.AUTO,
-    physics: {
-      default: "arcade",
+  physics: {
+    default: "arcade",
+    arcade: {
+      debug:true
+    }
     },
     scale: {
       mode: Phaser.Scale.FIT,
@@ -16,7 +19,7 @@ const config = {
   
     },
     pixelArt: true,
-    scene: [WorldScene],
+    scene: [WorldScene]
   };
   
   new Phaser.Game(config);
