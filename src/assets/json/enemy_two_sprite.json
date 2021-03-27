@@ -10,7 +10,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "enemy_two_down/01",
+					"filename": "enemy_two_down/sprite_00",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -31,7 +31,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_down/02",
+					"filename": "enemy_two_down/sprite_01",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -52,7 +52,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_down/03",
+					"filename": "enemy_two_down/sprite_02",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -73,7 +73,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_left/01",
+					"filename": "enemy_two_left/sprite_03",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -94,7 +94,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_left/02",
+					"filename": "enemy_two_left/sprite_04",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -115,7 +115,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_left/03",
+					"filename": "enemy_two_left/sprite_05",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -136,7 +136,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_right/01",
+					"filename": "enemy_two_right/sprite_06",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -157,7 +157,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_right/02",
+					"filename": "enemy_two_right/sprite_07",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -178,7 +178,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_right/03",
+					"filename": "enemy_two_right/sprite_08",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -199,7 +199,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_up/01",
+					"filename": "enemy_two_up/sprite_09",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -220,7 +220,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_up/02",
+					"filename": "enemy_two_up/sprite_10",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -241,7 +241,7 @@
 					}
 				},
 				{
-					"filename": "enemy_two_up/03",
+					"filename": "enemy_two_up/sprite_11",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -267,6 +267,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:69bd11524e24a31c71692b1b834fa619:7584f2d7808482dd9dc4940d074a34e0:cc7d738ef5f98e64280979ec8f5ab419$"
+		"smartupdate": "$TexturePacker:SmartUpdate:51865062ab005ae03f6fe10de0b623c8:e90d293849e3db8fdfcfc9eec5b9b41e:cc7d738ef5f98e64280979ec8f5ab419$"
 	}
 }

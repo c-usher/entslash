@@ -10,7 +10,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "hero_sprite_edited00.png",
+					"filename": "hero_down/hero_sprite_edited03",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -31,7 +31,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited01.png",
+					"filename": "hero_down/hero_sprite_edited04",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -52,7 +52,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited02.png",
+					"filename": "hero_down/hero_sprite_edited05",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -73,7 +73,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited03.png",
+					"filename": "hero_left/hero_sprite_edited06",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -94,7 +94,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited04.png",
+					"filename": "hero_left/hero_sprite_edited07",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -115,7 +115,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited05.png",
+					"filename": "hero_left/hero_sprite_edited08",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -136,7 +136,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited06.png",
+					"filename": "hero_right/hero_sprite_edited09",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -157,7 +157,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited07.png",
+					"filename": "hero_right/hero_sprite_edited10",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -178,7 +178,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited08.png",
+					"filename": "hero_right/hero_sprite_edited11",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -199,7 +199,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited09.png",
+					"filename": "hero_up/hero_sprite_edited00",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -220,7 +220,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited10.png",
+					"filename": "hero_up/hero_sprite_edited01",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -241,7 +241,7 @@
 					}
 				},
 				{
-					"filename": "hero_sprite_edited11.png",
+					"filename": "hero_up/hero_sprite_edited02",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -267,6 +267,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:f5085720a38910af522fc09f251fd544:2312357b8de155fbfaa6cc922194dbe3:00efc058c1b702b0ea429edf2f6f4881$"
+		"smartupdate": "$TexturePacker:SmartUpdate:de4893795741accbd90646510b467219:1bf407c9ef756f01fd784ef5a924c92b:00efc058c1b702b0ea429edf2f6f4881$"
 	}
 }

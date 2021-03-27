@@ -132,7 +132,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../json/hero_sprite.json</filename>
+                <filename>../../../json/hero_sprite.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -151,9 +151,9 @@
         <key>autoAliasEnabled</key>
         <true/>
         <key>trimSpriteNames</key>
-        <false/>
+        <true/>
         <key>prependSmartFolderName</key>
-        <false/>
+        <true/>
         <key>autodetectAnimations</key>
         <true/>
         <key>globalSpriteSettings</key>
