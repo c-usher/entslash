@@ -34,7 +34,7 @@
         <key>dataFormat</key>
         <string>phaser</string>
         <key>textureFileName</key>
-        <filename>../enemy_two_sprite.png</filename>
+        <filename>enemy_two_sprite.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>

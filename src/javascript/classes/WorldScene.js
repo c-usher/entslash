@@ -12,7 +12,7 @@ export default class WorldScene extends Phaser.Scene {
     this.hero
     this.keys
 
-    this.load.tilemapTiledJSON("map", "/src/assets/json/world_map.json");
+    this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
 
     this.load.image("building_tiles", "/src/assets/world_map/building_tiles-0.png");
 
@@ -36,12 +36,22 @@ export default class WorldScene extends Phaser.Scene {
       "/src/assets/world_map/ground_tile_set-1.png"
     );
 
+      //Load Hero Sprite Sheet
      this.load.spritesheet('heroSheet', '/src/assets/sprites/hero/hero_sprite.png', {
         frameWidth: 22,
         frameHeight: 23,
         startFrame: 0,
         endFrame: 11
-      });
+     });
+    
+    //Load Enemy Two Sprite Sheet
+    // this.load.spritesheet('enemyTwoSheet', '/src/assets/sprites/enemy_two/enemy_two_sprite.png', {
+    //   frameWidth: 22,
+    //   frameHeight: 23,
+    //   startFrame: 0,
+    //   endFrame: 11
+    // });
+    this.load.atlas('enemyTwoSheet', '/src/assets/sprites/enemy_two/enemy_two_sprite.png', '/src/json/enemy_two_sprite.json');
       
   }//preload;
 
@@ -90,8 +100,13 @@ export default class WorldScene extends Phaser.Scene {
     midLayer.scale = 0.5;
     belowLayer.scale = 0.5;
   
+    //Creates Hero from Hero.js
     this.hero = new Hero(this, 200, 200, 'heroSheet')
     this.hero.scale = 1.6;
+
+    //Creates Enemy Two from Enemy.js
+    const enemy = this.add.sprite(280, 200, 'enemyTwoSheet')
+    enemy.scale = 1.6;
   }//create;
 
   update() {

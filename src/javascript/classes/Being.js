@@ -1,7 +1,7 @@
 export default class Being extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, textureKey, type) {
     super(scene, x, y, textureKey)
-    console.log(this)
+    
 
     this.scene = scene
     this.textureKey = textureKey
