@@ -61,6 +61,7 @@ export default class Enemy extends Being {
 
     this.speed = 20;
     let randir = Math.floor(Math.random() * 4);
+    //Switch Case: Perform an action dependant on a condition. randir = 2 run case 2
     switch (randir) {
       case 0:
         this.body.setVelocity(0, -this.speed);
