@@ -12,7 +12,7 @@ export default class WorldScene extends Phaser.Scene {
     this.hero;
     this.enemy;
     this.keys;
-
+    //Loads Map
     this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
 
     this.load.image(
@@ -52,13 +52,7 @@ export default class WorldScene extends Phaser.Scene {
       }
     );
 
-    //Load Enemy Two Sprite Sheet
-    // this.load.spritesheet('enemyTwoSheet', '/src/assets/sprites/enemy_two/enemy_two_sprite.png', {
-    //   frameWidth: 22,
-    //   frameHeight: 23,
-    //   startFrame: 0,
-    //   endFrame: 11
-    // });
+    //Load Enemy Sprite Sheet
     this.load.atlas(
       "enemyTwoSheet",
       "/src/assets/sprites/enemy_two/enemy_two_sprite.png",
@@ -67,6 +61,7 @@ export default class WorldScene extends Phaser.Scene {
   } //preload;
 
   create() {
+    //Creates Map and Tiles
     const map = this.make.tilemap({
       key: "map",
     });
@@ -103,24 +98,33 @@ export default class WorldScene extends Phaser.Scene {
       environment_tiles_2,
       building_tiles,
     ];
-
+    //Creates Layers from the Map and  tiles
     const belowLayer = map.createLayer("below", tiles);
     const midLayer = map.createLayer("mid", tiles);
     const aboveLayer = map.createLayer("above", tiles);
     aboveLayer.scale = 0.5;
     midLayer.scale = 0.5;
     belowLayer.scale = 0.5;
+    aboveLayer.setDepth(100);
+    midLayer.setCollisionByProperty({
+      collides: true,
+    });
+    this.physics.world.bounds.width = map.widthInPixels;
+    this.physics.world.bounds.height = map.heightInPixels;
+    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
     //Creates Hero from Hero.js
     this.hero = new Hero(this, 400, 200, "heroSheet");
     this.hero.scale = 1.6;
+    this.hero.body.setCollideWorldBounds(true);
 
     //Creates Enemy from Enemy.js
     this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet");
     this.enemy.scale = 1.6;
+    this.physics.add.collider(this.enemy, midLayer);
   } //create;
 
   update() {
     this.hero.update();
-  }
+  } //Update
 }

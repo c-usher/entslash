@@ -59,6 +59,8 @@ export default class Enemy extends Being {
       repeat: -1,
     });
     this.anims.play("enemy-right");
+    this.speed = 20;
+    this.body.setVelocity(this.speed, 0);
   } //Constructor
 
   update() {}

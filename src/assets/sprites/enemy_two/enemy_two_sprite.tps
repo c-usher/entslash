@@ -181,18 +181,18 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">enemy_two_down/sprite_00.png</key>
-            <key type="filename">enemy_two_down/sprite_01.png</key>
-            <key type="filename">enemy_two_down/sprite_02.png</key>
-            <key type="filename">enemy_two_left/sprite_03.png</key>
-            <key type="filename">enemy_two_left/sprite_04.png</key>
-            <key type="filename">enemy_two_left/sprite_05.png</key>
-            <key type="filename">enemy_two_right/sprite_06.png</key>
-            <key type="filename">enemy_two_right/sprite_07.png</key>
-            <key type="filename">enemy_two_right/sprite_08.png</key>
-            <key type="filename">enemy_two_up/sprite_09.png</key>
-            <key type="filename">enemy_two_up/sprite_10.png</key>
-            <key type="filename">enemy_two_up/sprite_11.png</key>
+            <key type="filename">enemy_two_down/01.png</key>
+            <key type="filename">enemy_two_down/02.png</key>
+            <key type="filename">enemy_two_down/03.png</key>
+            <key type="filename">enemy_two_left/01.png</key>
+            <key type="filename">enemy_two_left/02.png</key>
+            <key type="filename">enemy_two_left/03.png</key>
+            <key type="filename">enemy_two_right/01.png</key>
+            <key type="filename">enemy_two_right/02.png</key>
+            <key type="filename">enemy_two_right/03.png</key>
+            <key type="filename">enemy_two_up/01.png</key>
+            <key type="filename">enemy_two_up/02.png</key>
+            <key type="filename">enemy_two_up/03.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>

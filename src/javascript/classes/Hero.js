@@ -36,7 +36,7 @@ export default class Hero extends Being {
       frameRate: animsFrameRate,
       repeat: -1,
     });
-    // this.setFrame(this.idleFrame.down)
+
     this.idleFrame = {
       up: 2,
       down: 5,
