@@ -36,7 +36,7 @@ export default class WorldScene extends Phaser.Scene {
       "/src/assets/world_map/ground_tile_set-1.png"
     );
 
-     this.load.spritesheet('heroSheet', '/src/assets/sprites/hero_sprite.png', {
+     this.load.spritesheet('heroSheet', '/src/assets/sprites/hero/hero_sprite.png', {
         frameWidth: 22,
         frameHeight: 23,
         startFrame: 0,

@@ -153,7 +153,7 @@
         <key>trimSpriteNames</key>
         <false/>
         <key>prependSmartFolderName</key>
-        <true/>
+        <false/>
         <key>autodetectAnimations</key>
         <true/>
         <key>globalSpriteSettings</key>
@@ -210,9 +210,9 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>hero_down</filename>
-            <filename>hero_left</filename>
             <filename>hero_right</filename>
+            <filename>hero_left</filename>
+            <filename>hero_down</filename>
             <filename>hero_up</filename>
         </array>
         <key>ignoreFileList</key>
