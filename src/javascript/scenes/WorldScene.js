@@ -37,8 +37,8 @@ export default class WorldScene extends Phaser.Scene {
     );
 
      this.load.spritesheet('heroSheet', '/src/assets/sprites/hero_sprite.png', {
-        frameWidth: 20,
-        frameHeight: 25,
+        frameWidth: 22,
+        frameHeight: 23,
         startFrame: 0,
         endFrame: 11
       });

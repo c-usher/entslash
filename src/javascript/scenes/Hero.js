@@ -15,7 +15,7 @@ export default class Hero extends Being {
 
     anims.create({
       key: "hero_down",
-      frames: anims.generateFrameNumbers(this.textureKey, { start: 3, end: 5 }),
+      frames: anims.generateFrameNumbers(this.textureKey, { start: 3, end: 5}),
       frameRate: animsFrameRate,
       repeat: -1,
     });
