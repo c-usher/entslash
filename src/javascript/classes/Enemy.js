@@ -58,9 +58,27 @@ export default class Enemy extends Being {
       frameRate: animsFrameRate,
       repeat: -1,
     });
-    this.anims.play("enemy-right");
+
     this.speed = 20;
-    this.body.setVelocity(this.speed, 0);
+    let randir = Math.floor(Math.random() * 4);
+    switch (randir) {
+      case 0:
+        this.body.setVelocity(0, -this.speed);
+        this.anims.play("enemy-up"); //Up
+        break;
+      case 1:
+        this.body.setVelocity(0, this.speed);
+        this.anims.play("enemy-down"); //Down
+        break;
+      case 2:
+        this.body.setVelocity(-this.speed, 0);
+        this.anims.play("enemy-left"); //Left
+        break;
+      case 3:
+        this.body.setVelocity(this.speed, 0);
+        this.anims.play("enemy-right"); //Right
+        break;
+    }
   } //Constructor
 
   update() {}

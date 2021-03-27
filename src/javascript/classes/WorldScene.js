@@ -106,6 +106,7 @@ export default class WorldScene extends Phaser.Scene {
     midLayer.scale = 0.5;
     belowLayer.scale = 0.5;
     aboveLayer.setDepth(100);
+    midLayer.setDepth(50);
     midLayer.setCollisionByProperty({
       collides: true,
     });
@@ -121,6 +122,7 @@ export default class WorldScene extends Phaser.Scene {
     //Creates Enemy from Enemy.js
     this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet");
     this.enemy.scale = 1.6;
+    this.enemy.body.setCollideWorldBounds(true);
     this.physics.add.collider(this.enemy, midLayer);
   } //create;
 
