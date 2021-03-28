@@ -59,7 +59,7 @@ export default class Enemy extends Being {
       repeat: -1,
     });
 
-    this.speed = 40;
+    this.speed = 100;
     let randir = Math.floor(Math.random() * 4);
     //Switch Case: Perform an action dependant on a condition. randir = 2 run case 2
     switch (randir) {
@@ -99,6 +99,7 @@ export default class Enemy extends Being {
       possibleDirections.shift(); //Removes the "none:" from the array
 
       const newDirection = possibleDirections[Math.floor(Math.random() * 4)];
+
       // Changes direction when the sprite comes in contact with wall
       switch (newDirection) {
         case "up":

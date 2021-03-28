@@ -118,7 +118,7 @@ export default class WorldScene extends Phaser.Scene {
     this.hero = new Hero(this, 400, 200, "heroSheet");
     this.hero.scale = 1.6;
     this.hero.body.setCollideWorldBounds(true);
-
+    this.cameras.main.startFollow(this.hero);
     //Creates Enemy from Enemy.js
     this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet");
     this.enemy.scale = 1.6;
