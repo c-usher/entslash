@@ -128,5 +128,6 @@ export default class WorldScene extends Phaser.Scene {
 
   update() {
     this.hero.update();
+    this.enemy.update();
   } //Update
 }

@@ -59,7 +59,7 @@ export default class Enemy extends Being {
       repeat: -1,
     });
 
-    this.speed = 20;
+    this.speed = 40;
     let randir = Math.floor(Math.random() * 4);
     //Switch Case: Perform an action dependant on a condition. randir = 2 run case 2
     switch (randir) {
@@ -82,5 +82,42 @@ export default class Enemy extends Being {
     }
   } //Constructor
 
-  update() {}
+  update() {
+    const { speed } = this; // Destructuring
+    const enemyBlocked = this.body.blocked;
+    if (
+      enemyBlocked.up ||
+      enemyBlocked.down ||
+      enemyBlocked.left ||
+      enemyBlocked.right
+    ) {
+      let possibleDirections = [];
+      //For each direction push into possibleDirections array)
+      for (const direction in enemyBlocked) {
+        possibleDirections.push(direction);
+      }
+      possibleDirections.shift(); //Removes the "none:" from the array
+
+      const newDirection = possibleDirections[Math.floor(Math.random() * 4)];
+      // Changes direction when the sprite comes in contact with wall
+      switch (newDirection) {
+        case "up":
+          this.body.setVelocity(0, -this.speed);
+          this.anims.play("enemy-up"); //Up
+          break;
+        case "down":
+          this.body.setVelocity(0, this.speed);
+          this.anims.play("enemy-down"); //Down
+          break;
+        case "left":
+          this.body.setVelocity(-this.speed, 0);
+          this.anims.play("enemy-left"); //Left
+          break;
+        case "right":
+          this.body.setVelocity(this.speed, 0);
+          this.anims.play("enemy-right"); //Right
+          break;
+      }
+    }
+  }
 } //Class
