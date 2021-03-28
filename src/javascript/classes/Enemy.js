@@ -53,14 +53,14 @@ export default class Enemy extends Being {
         suffix: "",
         start: 1,
         end: 3,
-        zeroPad: 2, //how digits to add to the end of the prefix 2 = 00
+        zeroPad: 2, //how many digits to add to the end of the prefix 2 = 00
       }),
       frameRate: animsFrameRate,
       repeat: -1,
     });
 
     this.speed = 100;
-    let randir = Math.floor(Math.random() * 4);
+    let randir = Math.floor(Math.random() * 4); // 4 options: Up, Down, Left, Right
     //Switch Case: Perform an action dependant on a condition. randir = 2 run case 2
     switch (randir) {
       case 0:
@@ -120,5 +120,5 @@ export default class Enemy extends Being {
           break;
       }
     }
-  }
+  } //Update
 } //Class

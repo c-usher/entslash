@@ -1,25 +1,23 @@
-import Phaser from 'phaser';
-import WorldScene from './javascript/classes/WorldScene'
-
+import Phaser from "phaser";
+import WorldScene from "./javascript/classes/WorldScene";
 
 const config = {
-    width: 1280,
-    height: 720,
-    type: Phaser.AUTO,
+  width: 1280,
+  height: 720,
+  type: Phaser.AUTO,
   physics: {
     default: "arcade",
     arcade: {
-      debug:false
-    }
+      debug: false,
     },
-    scale: {
-      mode: Phaser.Scale.FIT,
-      autoCenter: Phaser.Scale.CENTER_BOTH,
-      parent: "game"
-  
-    },
-    pixelArt: true,
-    scene: [WorldScene]
-  };
-  
-  new Phaser.Game(config);
+  },
+  scale: {
+    mode: Phaser.DOM.FIT,
+    autoCenter: Phaser.DOM.CENTER_BOTH,
+    parent: "game",
+  },
+  pixelArt: true,
+  scene: [WorldScene],
+};
+
+new Phaser.Game(config);

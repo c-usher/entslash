@@ -3,11 +3,12 @@ import Enemy from "./Enemy";
 export default class WorldScene extends Phaser.Scene {
   constructor() {
     super("WorldScene");
-  }
+  } //Constructor
 
   preload() {
     this.cursors;
     this.cameras.main.setBackgroundColor(0x9900e3);
+    this.cameras.main.setBounds();
 
     this.hero;
     this.enemy;
@@ -107,18 +108,20 @@ export default class WorldScene extends Phaser.Scene {
     belowLayer.scale = 0.5;
     aboveLayer.setDepth(100);
     midLayer.setDepth(50);
+    //Collides comes from the map made by tiled
     midLayer.setCollisionByProperty({
       collides: true,
     });
-    this.physics.world.bounds.width = map.widthInPixels;
-    this.physics.world.bounds.height = map.heightInPixels;
-    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    this.physics.world.bounds.width = 1600;
+    this.physics.world.bounds.height = 1600;
+    this.cameras.main.setBounds(0, 0, 1600, 1600);
 
     //Creates Hero from Hero.js
     this.hero = new Hero(this, 400, 200, "heroSheet");
     this.hero.scale = 1.6;
     this.hero.body.setCollideWorldBounds(true);
     this.cameras.main.startFollow(this.hero);
+
     //Creates Enemy from Enemy.js
     this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet");
     this.enemy.scale = 1.6;
