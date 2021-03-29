@@ -111,7 +111,7 @@ export default class WorldScene extends Phaser.Scene {
     midLayer.setDepth(50);
     //Collides comes from the map made by tiled
     midLayer.setCollisionByProperty({
-      collides: true,
+      colides: true,
     });
     this.physics.world.bounds.width = 1600;
     this.physics.world.bounds.height = 1600;
@@ -120,6 +120,7 @@ export default class WorldScene extends Phaser.Scene {
     //Creates Hero from Hero.js
     this.hero = new Hero(this, 400, 200, "heroSheet");
     this.hero.scale = 1.6;
+    this.physics.add.collider(this.hero, midLayer);
     this.hero.body.setCollideWorldBounds(true);
     this.cameras.main.startFollow(this.hero);
 
@@ -146,18 +147,40 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     ); //When the Hero and the Enemy from enemies group overlap it will call handle collision method
+    this.physics.add.overlap(
+      this.hero,
+      this.enemy,
+      this.handleBeingCollision,
+      null,
+      this
+    ); // When the hero collides with the Big Enemy call handleBeingCollision method;
   } //create;
 
   handleBeingCollision(hero, enemy) {
-    console.log("Hero Hit");
+    hero.setTint(0xf00000);
+    //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group
+    this.time.addEvent({
+      delay: 300,
+      callback: () => {
+        hero.clearTint();
+      },
+      callbackScope: this,
+      loop: false,
+    });
     enemy.killed();
   }
   update() {
     this.hero.update();
-    this.enemy.update();
+    //If the enemy is not dead call update on enemy
+    if (!this.enemy.isDead) {
+      this.enemy.update();
+    }
+
     //iterates over the children in the enemies group and calls their update function
     this.enemies.children.iterate((child) => {
-      child.update(); //Calls update function for each child of enemies.
+      if (!child.isDead) {
+        child.update(); //Calls update function for each child of enemies.
+      }
     });
   } //Update
 }
