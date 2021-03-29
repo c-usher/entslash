@@ -158,6 +158,7 @@ export default class WorldScene extends Phaser.Scene {
 
   handleBeingCollision(hero, enemy) {
     hero.setTint(0xf00000);
+    this.cameras.main.shake(40, 0.02);
     //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group
     this.time.addEvent({
       delay: 300,
