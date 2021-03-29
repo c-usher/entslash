@@ -139,8 +139,19 @@ export default class WorldScene extends Phaser.Scene {
       this.enemies.add(e); //This adds the enemy into the group enemies.
     }
     this.physics.add.collider(this.enemies, midLayer);
+    this.physics.add.overlap(
+      this.hero,
+      this.enemies,
+      this.handleBeingCollision,
+      null,
+      this
+    ); //When the Hero and the Enemy from enemies group overlap it will call handle collision method
   } //create;
 
+  handleBeingCollision(hero, enemy) {
+    console.log("Hero Hit");
+    enemy.killed();
+  }
   update() {
     this.hero.update();
     this.enemy.update();
