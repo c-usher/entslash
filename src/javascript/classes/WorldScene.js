@@ -12,6 +12,7 @@ export default class WorldScene extends Phaser.Scene {
 
     this.hero;
     this.enemy;
+    this.enemies;
     this.keys;
     //Loads Map
     this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
@@ -127,6 +128,17 @@ export default class WorldScene extends Phaser.Scene {
     this.enemy.scale = 1.6;
     this.enemy.body.setCollideWorldBounds(true);
     this.physics.add.collider(this.enemy, midLayer);
+
+    //Creates group of enemies
+    this.enemies = this.add.group();
+    //Spawn enemies until i > 20
+    for (let i = 0; i < 20; i++) {
+      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet"); //Will spawn enemy starting at 200 and then 20 * i +200 after that
+      e.body.setCollideWorldBounds(true);
+      e.scale = 1.6;
+      this.enemies.add(e); //This adds the enemy into the group enemies.
+    }
+    this.physics.add.collider(this.enemies, midLayer);
   } //create;
 
   update() {
