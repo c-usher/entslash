@@ -144,5 +144,9 @@ export default class WorldScene extends Phaser.Scene {
   update() {
     this.hero.update();
     this.enemy.update();
+    //iterates over the children in the enemies group and calls their update function
+    this.enemies.children.iterate((child) => {
+      child.update(); //Calls update function for each child of enemies.
+    });
   } //Update
 }
