@@ -16,5 +16,14 @@ export default class Hp {
     this.newGraphics.fillRectShape(hpFill);
 
     this.scene.add.text(x, y, "HP", { fontSize: "10px", fill: "#fff" });
+  } //Constructor
+
+  takeDamage(hp) {
+    this.newGraphics.clear();
+    this.currentHp = hp;
+    this.newGraphics.fillStyle(0xff0000, 1);
+
+    const hpFill = new Phaser.Geom.Rectangle(this.x, this.y, this.currentHp, 8);
+    this.newGraphics.fillRectShape(hpFill);
   }
 }

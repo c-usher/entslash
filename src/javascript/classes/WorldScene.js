@@ -125,10 +125,9 @@ export default class WorldScene extends Phaser.Scene {
     this.physics.add.collider(this.hero, midLayer);
     this.hero.body.setCollideWorldBounds(true);
     this.cameras.main.startFollow(this.hero);
-    console.log(this.hero.hp);
 
     //Creates Enemy from Enemy.js
-    this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet");
+    this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet", 50);
     this.enemy.scale = 1.6;
     this.enemy.body.setCollideWorldBounds(true);
     this.physics.add.collider(this.enemy, midLayer);
@@ -137,7 +136,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemies = this.add.group();
     //Spawn enemies until i > 20
     for (let i = 0; i < 20; i++) {
-      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet"); //Will spawn enemy starting at 200 and then 20 * i +200 after that
+      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 10); //Will spawn enemy starting at 200 and then 20 * i +200 after that
       e.body.setCollideWorldBounds(true);
       e.scale = 1.6;
       this.enemies.add(e); //This adds the enemy into the group enemies.
@@ -161,6 +160,8 @@ export default class WorldScene extends Phaser.Scene {
   } //create;
 
   handleBeingCollision(hero, enemy) {
+    hero.hp -= enemy.dmg;
+    this.hp.takeDamage(hero.hp);
     hero.setTint(0xf00000);
     this.cameras.main.shake(40, 0.02);
     //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group
