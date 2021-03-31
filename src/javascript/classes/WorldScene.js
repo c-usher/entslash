@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import Enemy from "./Enemy";
+import Hp from "./Hp";
 export default class WorldScene extends Phaser.Scene {
   constructor() {
     super("WorldScene");
@@ -14,6 +15,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemy;
     this.enemies;
     this.keys;
+    this.hp;
     //Loads Map
     this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
 
@@ -118,11 +120,12 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, 1600, 1600);
 
     //Creates Hero from Hero.js
-    this.hero = new Hero(this, 400, 200, "heroSheet");
+    this.hero = new Hero(this, 400, 200, "heroSheet", 100);
     this.hero.scale = 1.6;
     this.physics.add.collider(this.hero, midLayer);
     this.hero.body.setCollideWorldBounds(true);
     this.cameras.main.startFollow(this.hero);
+    console.log(this.hero.hp);
 
     //Creates Enemy from Enemy.js
     this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet");
@@ -154,6 +157,7 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     ); // When the hero collides with the Big Enemy call handleBeingCollision method;
+    this.hp = new Hp(this, this.hero.x, this.hero.y, 100);
   } //create;
 
   handleBeingCollision(hero, enemy) {
