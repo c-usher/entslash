@@ -15,12 +15,12 @@ export default class UiScene extends Phaser.Scene {
       key: "fullBottle",
       setXY: {
         x: 10,
-        y: 10,
-        stepX: 16,
+        y: 700,
+        stepX: 25,
       },
-      quantity: 3,
+      quantity: 10,
     });
-    EventsCenter.on("playerDamaged", this.handleHpChange);
+    EventsCenter.on("playerDamaged", this.handleHpChange, this);
   }
 
   handleHpChange(hp) {
