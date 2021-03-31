@@ -3,7 +3,7 @@ export default class Hero extends Being {
   constructor(scene, x, y, textureKey, hp) {
     super(scene, x, y, textureKey, "Hero");
 
-    this.hp = hp;
+    this.hp = 3;
     const animsFrameRate = 8;
     const anims = scene.anims;
 

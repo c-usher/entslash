@@ -1,15 +1,17 @@
 import Phaser from "phaser";
+import EventsCenter from "../events/EventsCenter";
 export default class UiScene extends Phaser.Scene {
+  hpBottles = Phaser.GameObjects.Group;
   constructor() {
     super("UiScene");
   }
 
   create() {
-    const hpBottles = this.add.group({
+    this.hpBottles = this.add.group({
       classType: Phaser.GameObjects.Image,
     });
 
-    hpBottles.createMultiple({
+    this.hpBottles.createMultiple({
       key: "fullBottle",
       setXY: {
         x: 10,
@@ -17,6 +19,18 @@ export default class UiScene extends Phaser.Scene {
         stepX: 16,
       },
       quantity: 3,
+    });
+    EventsCenter.on("playerDamaged", this.handleHpChange);
+  }
+
+  handleHpChange(hp) {
+    this.hpBottles.children.each((object, index) => {
+      const hpBottles = object;
+      if (index <= hp) {
+        hpBottles.setTexture("fullBottle");
+      } else {
+        hpBottles.setTexture("emptyBottle");
+      }
     });
   }
 }

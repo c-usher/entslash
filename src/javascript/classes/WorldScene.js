@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import Enemy from "./Enemy";
+import EventsCenter from "../events/EventsCenter";
 
 export default class WorldScene extends Phaser.Scene {
   constructor() {
@@ -125,7 +126,7 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, 1600, 1600);
 
     //Creates Hero from Hero.js
-    this.hero = new Hero(this, 400, 200, "heroSheet", 100);
+    this.hero = new Hero(this, 400, 200, "heroSheet");
     this.hero.scale = 1.6;
     this.physics.add.collider(this.hero, midLayer);
     this.hero.body.setCollideWorldBounds(true);
@@ -164,9 +165,11 @@ export default class WorldScene extends Phaser.Scene {
   } //create;
 
   handleBeingCollision(hero, enemy) {
+    this.hero.hp -= this.enemy.dmg;
     hero.setTint(0xf00000);
     this.cameras.main.shake(40, 0.02);
     //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group
+    EventsCenter.emit("playerDamaged", this.hero.hp);
     this.time.addEvent({
       delay: 300,
       callback: () => {
