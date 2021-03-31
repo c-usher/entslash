@@ -15,6 +15,7 @@ export default class WorldScene extends Phaser.Scene {
     this.hero;
     this.enemy;
     this.enemies;
+    this.bigEnemy;
     this.keys;
 
     //Loads Map
@@ -133,10 +134,10 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.startFollow(this.hero);
 
     //Creates Enemy from Enemy.js
-    this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet", 1);
-    this.enemy.scale = 1.6;
-    this.enemy.body.setCollideWorldBounds(true);
-    this.physics.add.collider(this.enemy, midLayer);
+    this.bigEnemy = new Enemy(this, 480, 200, "enemyTwoSheet", 5);
+    this.bigEnemy.scale = 1.6;
+    this.bigEnemy.body.setCollideWorldBounds(true);
+    this.physics.add.collider(this.bigEnemy, midLayer);
 
     //Creates group of enemies
     this.enemies = this.add.group();
@@ -144,7 +145,6 @@ export default class WorldScene extends Phaser.Scene {
     for (let i = 0; i < 1; i++) {
       const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 1); //Will spawn enemy starting at 200 and then 20 * i +200 after that
       e.body.setCollideWorldBounds(true);
-      e.scale = 1.6;
       this.enemies.add(e); //This adds the enemy into the group enemies.
     }
     this.physics.add.collider(this.enemies, midLayer);
@@ -157,7 +157,7 @@ export default class WorldScene extends Phaser.Scene {
     ); //When the Hero and the Enemy from enemies group overlap it will call handle collision method
     this.physics.add.overlap(
       this.hero,
-      this.enemy,
+      this.bigEnemy,
       this.handleBeingCollision,
       null,
       this
@@ -165,9 +165,9 @@ export default class WorldScene extends Phaser.Scene {
   } //create;
 
   handleBeingCollision(hero, enemy) {
-    this.hero.hp -= this.enemy.dmg;
-    console.log(this.hero.hp);
-    console.log(`dmg: ${this.enemy.dmg}`);
+    hero.hp -= enemy.dmg;
+    console.log(hero.hp);
+    console.log(`dmg: ${enemy.dmg}`);
     hero.setTint(0xf00000);
     this.cameras.main.shake(40, 0.02);
     //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group
@@ -185,8 +185,8 @@ export default class WorldScene extends Phaser.Scene {
   update() {
     this.hero.update();
     //If the enemy is not dead call update on enemy
-    if (!this.enemy.isDead) {
-      this.enemy.update();
+    if (!this.bigEnemy.isDead) {
+      this.bigEnemy.update();
     }
 
     //iterates over the children in the enemies group and calls their update function
