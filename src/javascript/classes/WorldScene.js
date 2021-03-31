@@ -1,6 +1,6 @@
 import Hero from "./Hero";
 import Enemy from "./Enemy";
-import Hp from "./Hp";
+
 export default class WorldScene extends Phaser.Scene {
   constructor() {
     super("WorldScene");
@@ -15,7 +15,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemy;
     this.enemies;
     this.keys;
-    this.hp;
+
     //Loads Map
     this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
 
@@ -62,9 +62,14 @@ export default class WorldScene extends Phaser.Scene {
       "/src/assets/sprites/enemy_two/enemy_two_sprite.png",
       "/src/json/enemy_two_sprite.json"
     );
+
+    //Load Bottle Images
+    this.load.image("fullBottle", "/src/assets/sprites/hero/full_bottle.png");
+    this.load.image("emptyBottle", "/src/assets/sprites/hero/empty_bottle.png");
   } //preload;
 
   create() {
+    this.scene.run("UiScene"); // Runs Scene parallel to WorldScene
     //Creates Map and Tiles
     const map = this.make.tilemap({
       key: "map",
@@ -156,12 +161,9 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     ); // When the hero collides with the Big Enemy call handleBeingCollision method;
-    this.hp = new Hp(this, this.hero.x, this.hero.y, 100);
   } //create;
 
   handleBeingCollision(hero, enemy) {
-    hero.hp -= enemy.dmg;
-    this.hp.takeDamage(hero.hp);
     hero.setTint(0xf00000);
     this.cameras.main.shake(40, 0.02);
     //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group
