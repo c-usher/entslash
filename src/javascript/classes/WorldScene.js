@@ -133,7 +133,7 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.startFollow(this.hero);
 
     //Creates Enemy from Enemy.js
-    this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet", 5);
+    this.enemy = new Enemy(this, 480, 200, "enemyTwoSheet", 1);
     this.enemy.scale = 1.6;
     this.enemy.body.setCollideWorldBounds(true);
     this.physics.add.collider(this.enemy, midLayer);
@@ -167,6 +167,7 @@ export default class WorldScene extends Phaser.Scene {
   handleBeingCollision(hero, enemy) {
     this.hero.hp -= this.enemy.dmg;
     console.log(this.hero.hp);
+    console.log(`dmg: ${this.enemy.dmg}`);
     hero.setTint(0xf00000);
     this.cameras.main.shake(40, 0.02);
     //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group

@@ -26,7 +26,7 @@ export default class UiScene extends Phaser.Scene {
   handleHpChange(hp) {
     this.hpBottles.children.each((object, index) => {
       const hpBottles = object;
-      if (index <= hp) {
+      if (index < hp) {
         hpBottles.setTexture("fullBottle");
       } else {
         hpBottles.setTexture("emptyBottle");
