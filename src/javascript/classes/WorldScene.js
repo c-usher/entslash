@@ -182,7 +182,11 @@ export default class WorldScene extends Phaser.Scene {
     });
     enemy.killed();
     if (hero.hp <= 0) {
-      this.scene.restart();
+      this.cameras.main.fade(300, 100, 0, 0);
+      this.cameras.main.once("camerafadeoutcomplete", () => {
+        this.scene.restart();
+      });
+      //this.scene.restart();
     }
   }
   update() {
