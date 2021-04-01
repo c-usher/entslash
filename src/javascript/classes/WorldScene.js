@@ -72,7 +72,7 @@ export default class WorldScene extends Phaser.Scene {
     this.load.image("emptyBottle", "/src/assets/sprites/hero/empty_bottle.png");
 
     //Load BlackHole Image
-    this.load.image("blackHole", "/src/assets/sprites/hero/Black-hole.png");
+    this.load.image("blackHole", "/src/assets/sprites/hero/Black_hole.png");
   } //preload;
 
   create() {

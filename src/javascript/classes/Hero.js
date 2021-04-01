@@ -6,6 +6,7 @@ export default class Hero extends Being {
     this.hp = 10;
     const animsFrameRate = 8;
     const anims = scene.anims;
+    this.facing = "down";
 
     anims.create({
       key: "hero_up",
