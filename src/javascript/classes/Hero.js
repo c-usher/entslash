@@ -102,6 +102,10 @@ export default class Hero extends Being {
       this.anims.stop();
     }
 
+    if (this.anims.currentAnim) {
+      this.facing = this.anims.currentAnim.key.split("_")[1]; //Split breaks down string into an array based off of a parameter. In this case the parameter is _ found in the name of the direction keys. ex: hero_up
+    }
+    //Idle Anims
     if (this.body.velocity.x === 0 && this.body.velocity.y === 0) {
       if (previousVelocity.x < 0) {
         this.setFrame(this.idleFrame.left);
