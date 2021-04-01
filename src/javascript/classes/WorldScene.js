@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import Enemy from "./Enemy";
+import { Projectile, Projectiles } from "./Projectile";
 
 import EventsCenter from "../events/EventsCenter";
 
@@ -17,7 +18,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemies;
     this.bigEnemy;
     this.keys;
-    this.blackHoles;
+    this.projectiles;
 
     //Loads Map
     this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
@@ -171,6 +172,7 @@ export default class WorldScene extends Phaser.Scene {
     this.keys = this.input.keyboard.addKeys({
       space: "SPACE",
     });
+    this.projectiles = new Projectiles(this);
   } //create;
 
   handleBeingCollision(hero, enemy) {
@@ -201,6 +203,13 @@ export default class WorldScene extends Phaser.Scene {
   //Time: returns the value in milliseconds from the time program started running.
   //Delta: returns the value from the last update cycle to the current update cycle.
   update(time, delta) {
+    if (this.keys.space.isDown) {
+      this.projectiles.castProjectile(
+        this.hero.x,
+        this.hero.y,
+        this.hero.facing
+      );
+    }
     this.hero.update();
     //If the enemy is not dead call update on enemy
     if (!this.bigEnemy.isDead) {
