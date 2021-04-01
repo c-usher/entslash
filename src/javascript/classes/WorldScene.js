@@ -1,12 +1,12 @@
 import Hero from "./Hero";
 import Enemy from "./Enemy";
+
 import EventsCenter from "../events/EventsCenter";
 
 export default class WorldScene extends Phaser.Scene {
   constructor() {
     super("WorldScene");
   } //Constructor
-
   preload() {
     this.cursors;
     this.cameras.main.setBackgroundColor(0x9900e3);
@@ -17,6 +17,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemies;
     this.bigEnemy;
     this.keys;
+    this.blackHoles;
 
     //Loads Map
     this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
@@ -68,6 +69,9 @@ export default class WorldScene extends Phaser.Scene {
     //Load Bottle Images
     this.load.image("fullBottle", "/src/assets/sprites/hero/full_bottle.png");
     this.load.image("emptyBottle", "/src/assets/sprites/hero/empty_bottle.png");
+
+    //Load BlackHole Image
+    this.load.image("blackHole", "/src/assets/sprites/hero/Black-hole.png");
   } //preload;
 
   create() {
@@ -162,6 +166,11 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     ); // When the hero collides with the Big Enemy call handleBeingCollision method;
+
+    //Black Hole Logic
+    this.keys = this.input.keyboard.addKeys({
+      space: "SPACE",
+    });
   } //create;
 
   handleBeingCollision(hero, enemy) {
@@ -189,7 +198,9 @@ export default class WorldScene extends Phaser.Scene {
       //this.scene.restart();
     }
   }
-  update() {
+  //Time: returns the value in milliseconds from the time program started running.
+  //Delta: returns the value from the last update cycle to the current update cycle.
+  update(time, delta) {
     this.hero.update();
     //If the enemy is not dead call update on enemy
     if (!this.bigEnemy.isDead) {

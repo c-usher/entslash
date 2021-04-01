@@ -1,12 +1,13 @@
 import Being from "./Being";
 export default class Enemy extends Being {
-  constructor(scene, x, y, textureKey, dmg) {
+  constructor(scene, x, y, textureKey, dmg, hp) {
     super(scene, x, y, textureKey, "Enemy");
 
     const animsFrameRate = 8;
     const anims = scene.anims;
     this.textureKey = textureKey;
     this.dmg = dmg;
+    this.hp = hp;
 
     anims.create({
       key: "enemy-up",
