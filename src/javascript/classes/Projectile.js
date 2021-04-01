@@ -6,23 +6,37 @@ export class Projectile extends Phaser.Physics.Arcade.Sprite {
   }
   cast(x, y, dir) {
     this.body.reset(x, y);
+    // this.body.setCollideWorldBounds(true);
     this.setActive(true);
     this.setVisible(true);
     this.dir = dir;
     switch (dir) {
       case "up":
         this.setVelocity(0, -200);
+
         break;
       case "down":
         this.setVelocity(0, 200);
+
         break;
       case "left":
         this.setVelocity(-200, 0);
+
         break;
       case "right":
         this.setVelocity(200, 0);
+
         break;
     }
+    // this.body.onWorldBounds = true;
+    // this.body.world.on(
+    //   "worldbounds",
+    //   (body) => {
+    //     this.setActive(false);
+    //     this.setVisible(false);
+    //   },
+    //   this.body
+    // );
   }
   recycle() {
     this.setActive(false);
@@ -36,8 +50,10 @@ export class Projectiles extends Phaser.Physics.Arcade.Group {
     this.createMultiple({
       frameQuantity: 10,
       key: "blackHole",
+      collideWorldBounds: true,
       active: false,
       visible: false,
+
       classType: Projectile,
     });
   }

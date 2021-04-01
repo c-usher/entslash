@@ -19,6 +19,7 @@ export default class WorldScene extends Phaser.Scene {
     this.bigEnemy;
     this.keys;
     this.projectiles;
+    this.lastCastTime = 0;
 
     //Loads Map
     this.load.tilemapTiledJSON("map", "/src/json/world_map.json");
@@ -173,7 +174,17 @@ export default class WorldScene extends Phaser.Scene {
       space: "SPACE",
     });
     this.projectiles = new Projectiles(this);
+    this.physics.add.collider(
+      this.projectiles,
+      midLayer,
+      this.handleProjectileWorldCollision,
+      null,
+      this
+    );
   } //create;
+  handleProjectileWorldCollision(projectile) {
+    this.projectiles.killAndHide(projectile); //sets active to false and visible to false
+  }
 
   handleBeingCollision(hero, enemy) {
     hero.hp -= enemy.dmg;
@@ -197,18 +208,21 @@ export default class WorldScene extends Phaser.Scene {
       this.cameras.main.once("camerafadeoutcomplete", () => {
         this.scene.restart();
       });
-      //this.scene.restart();
     }
-  }
+  } //handleBeingCollision
+
   //Time: returns the value in milliseconds from the time program started running.
   //Delta: returns the value from the last update cycle to the current update cycle.
   update(time, delta) {
     if (this.keys.space.isDown) {
-      this.projectiles.castProjectile(
-        this.hero.x,
-        this.hero.y,
-        this.hero.facing
-      );
+      if (time > this.lastCastTime) {
+        this.lastCastTime = time + 500; //Will not let you fire again for 500 milliseconds
+        this.projectiles.castProjectile(
+          this.hero.x,
+          this.hero.y,
+          this.hero.facing
+        );
+      }
     }
     this.hero.update();
     //If the enemy is not dead call update on enemy
