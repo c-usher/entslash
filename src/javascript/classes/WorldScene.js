@@ -124,7 +124,7 @@ export default class WorldScene extends Phaser.Scene {
     belowLayer.scale = 0.5;
     aboveLayer.setDepth(100);
     midLayer.setDepth(50);
-    //Collides comes from the map made by tiled
+    //Colides comes from the map made by tiled
     midLayer.setCollisionByProperty({
       colides: true,
     });
@@ -133,14 +133,14 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, 1600, 1600);
 
     //Creates Hero from Hero.js
-    this.hero = new Hero(this, 400, 200, "heroSheet");
+    this.hero = new Hero(this, 400, 200, "heroSheet", 10);
     this.hero.scale = 1.6;
     this.physics.add.collider(this.hero, midLayer);
     this.hero.body.setCollideWorldBounds(true);
     this.cameras.main.startFollow(this.hero);
 
     //Creates Enemy from Enemy.js
-    this.bigEnemy = new Enemy(this, 480, 200, "enemyTwoSheet", 5);
+    this.bigEnemy = new Enemy(this, 480, 200, "enemyTwoSheet", 5, 100);
     this.bigEnemy.scale = 1.6;
     this.bigEnemy.body.setCollideWorldBounds(true);
     this.physics.add.collider(this.bigEnemy, midLayer);
@@ -149,7 +149,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemies = this.add.group();
     //Spawn enemies until i > 20
     for (let i = 0; i < 10; i++) {
-      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 1); //Will spawn enemy starting at 200 and then 20 * i +200 after that
+      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 1, 50); //Will spawn enemy starting at 200 and then 20 * i +200 after that
       e.body.setCollideWorldBounds(true);
       this.enemies.add(e); //This adds the enemy into the group enemies.
     }
@@ -173,7 +173,12 @@ export default class WorldScene extends Phaser.Scene {
     this.keys = this.input.keyboard.addKeys({
       space: "SPACE",
     });
-    this.projectiles = new Projectiles(this);
+    this.projectiles = new Projectiles(this); //Creates Black Holes
+    //For each entry in this.projectiles.children.entires set entry.dmg to 10. Sets damage for black holes.
+    this.projectiles.children.entries.forEach((entry) => {
+      entry.dmg = 10;
+    });
+
     this.physics.add.collider(
       this.projectiles,
       midLayer,
@@ -181,15 +186,29 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     );
+    this.physics.add.overlap(
+      this.projectiles,
+      this.enemies,
+      this.handleProjectileEnemyCollision,
+      null,
+      this
+    );
   } //create;
   handleProjectileWorldCollision(projectile) {
     this.projectiles.killAndHide(projectile); //sets active to false and visible to false
-  }
+  } // handleProjectileWorldCollision
+  handleProjectileEnemyCollision(enemy, projectile) {
+    if (projectile.active) {
+      enemy.hp -= projectile.dmg;
+      if (enemy.hp <= 0) {
+        enemy.killed();
+      }
+      projectile.recycle();
+    }
+  } //handleProjectileEnemyCollision
 
   handleBeingCollision(hero, enemy) {
     hero.hp -= enemy.dmg;
-    console.log(hero.hp);
-    console.log(`dmg: ${enemy.dmg}`);
     hero.setTint(0xf00000);
     this.cameras.main.shake(40, 0.02);
     //Time event built into phaser3 for 300 milliseconds the players tint will go red when overlapped by enemy from enemies group

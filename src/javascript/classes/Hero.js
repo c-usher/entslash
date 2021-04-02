@@ -1,6 +1,6 @@
 import Being from "./Being.js";
 export default class Hero extends Being {
-  constructor(scene, x, y, textureKey, hp) {
+  constructor(scene, x, y, textureKey, dmg) {
     super(scene, x, y, textureKey, "Hero");
 
     this.hp = 10;

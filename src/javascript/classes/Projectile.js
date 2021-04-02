@@ -1,12 +1,12 @@
 export class Projectile extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y) {
-    super(scene, x, y, "blackHole");
+    super(scene, x, y, "blackHole", null);
     this.x = 200;
     this.y = 200;
   }
   cast(x, y, dir) {
     this.body.reset(x, y);
-    // this.body.setCollideWorldBounds(true);
+
     this.setActive(true);
     this.setVisible(true);
     this.dir = dir;
@@ -28,15 +28,6 @@ export class Projectile extends Phaser.Physics.Arcade.Sprite {
 
         break;
     }
-    // this.body.onWorldBounds = true;
-    // this.body.world.on(
-    //   "worldbounds",
-    //   (body) => {
-    //     this.setActive(false);
-    //     this.setVisible(false);
-    //   },
-    //   this.body
-    // );
   }
   recycle() {
     this.setActive(false);
