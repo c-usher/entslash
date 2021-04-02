@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import EventsCenter from "../events/EventsCenter";
+import EventsCenter from "../../events/EventsCenter";
 export default class UiScene extends Phaser.Scene {
   hpBottles = Phaser.GameObjects.Group;
   constructor() {

@@ -1,6 +1,6 @@
 import Phaser from "phaser";
-import WorldScene from "./javascript/classes/WorldScene";
-import UiScene from "./javascript/classes/UiScene";
+import WorldScene from "./javascript/classes/scenes/WorldScene";
+import UiScene from "./javascript/classes/scenes/UiScene";
 
 const config = {
   width: 1280,
