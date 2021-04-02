@@ -200,8 +200,26 @@ export default class WorldScene extends Phaser.Scene {
   handleProjectileEnemyCollision(enemy, projectile) {
     if (projectile.active) {
       enemy.hp -= projectile.dmg;
+      enemy.setTint(0x000000);
+      this.time.addEvent({
+        delay: 300,
+        callback: () => {
+          enemy.clearTint();
+        },
+        callbackScope: this,
+        loop: false,
+      });
       if (enemy.hp <= 0) {
-        enemy.killed();
+        enemy.setTint(0x000000);
+        this.time.addEvent({
+          delay: 350,
+          callback: () => {
+            enemy.killed();
+            projectile.recycle();
+          },
+          callbackScope: this,
+          loop: false,
+        });
       }
       projectile.recycle();
     }
