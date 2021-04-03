@@ -3,10 +3,9 @@ export class Projectile extends Phaser.Physics.Arcade.Sprite {
     super(scene, x, y, "blackHole", null);
     this.x = 200;
     this.y = 200;
-  }
+  } //Constructor
   cast(x, y, dir) {
     this.body.reset(x, y);
-
     this.setActive(true);
     this.setVisible(true);
     this.dir = dir;
@@ -27,13 +26,13 @@ export class Projectile extends Phaser.Physics.Arcade.Sprite {
         this.setVelocity(200, 0);
 
         break;
-    }
-  }
+    } //Switch
+  } //cast
   recycle() {
     this.setActive(false);
     this.setVisible(false);
-  }
-}
+  } //Recycle
+} //Class
 
 export class Projectiles extends Phaser.Physics.Arcade.Group {
   constructor(scene) {
@@ -47,11 +46,11 @@ export class Projectiles extends Phaser.Physics.Arcade.Group {
 
       classType: Projectile,
     });
-  }
+  } //Constructor
   castProjectile(x, y, facing) {
     let projectile = this.getFirstDead(false);
     if (projectile) {
       projectile.cast(x, y, facing);
     }
-  }
-}
+  } //castProjectile
+} //Class

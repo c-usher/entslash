@@ -81,7 +81,7 @@ export default class Enemy extends Being {
         this.body.setVelocity(this.speed, 0);
         this.anims.play("enemy-right"); //Right
         break;
-    }
+    } //Switch
   } //Constructor
 
   update() {
@@ -120,7 +120,7 @@ export default class Enemy extends Being {
           this.body.setVelocity(this.speed, 0);
           this.anims.play("enemy-right"); //Right
           break;
-      }
+      } //Switch
     }
   } //Update
 } //Class

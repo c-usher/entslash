@@ -4,7 +4,7 @@ export default class UiScene extends Phaser.Scene {
   hpBottles = Phaser.GameObjects.Group;
   constructor() {
     super("UiScene");
-  }
+  } //Constructor
 
   create() {
     this.hpBottles = this.add.group({
@@ -21,7 +21,7 @@ export default class UiScene extends Phaser.Scene {
       quantity: 10,
     });
     EventsCenter.on("playerDamaged", this.handleHpChange, this);
-  }
+  } //Create
 
   handleHpChange(hp) {
     this.hpBottles.children.each((object, index) => {
@@ -32,5 +32,5 @@ export default class UiScene extends Phaser.Scene {
         hpBottles.setTexture("emptyBottle");
       }
     });
-  }
-}
+  } //handleHpChange
+} //Class

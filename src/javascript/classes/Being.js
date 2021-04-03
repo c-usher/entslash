@@ -8,12 +8,12 @@ export default class Being extends Phaser.GameObjects.Sprite {
     this.scene.physics.world.enableBody(this, 0);
     this.type = type;
     this.isDead = false;
-  }
+  } //Constructor
 
   killed() {
     if (!this.isDead) {
       this.isDead = true;
       this.destroy();
     }
-  }
-}
+  } //Killed
+} //Class

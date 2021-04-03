@@ -117,5 +117,5 @@ export default class Hero extends Being {
         this.setFrame(this.idleFrame.down);
       }
     }
-  }
-}
+  } //Update
+} //Class
