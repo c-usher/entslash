@@ -1,5 +1,3 @@
-import WorldScene from "./WorldScene";
-
 export default class TitleScene extends Phaser.Scene {
   constructor() {
     super("titleScene");
