@@ -7,7 +7,11 @@ export default class TitleScene extends Phaser.Scene {
     this.load.image("titleBg", "/src/assets/titleScene.png");
   } //preload
   create() {
-    const titleBG = this.add.image(0, 0, "titleBg").setOrigin(0);
+    const titleBG = this.add
+      .image(0, 0, "titleBg")
+      .setOrigin(0)
+      .setDisplaySize(1280, 720);
+
     const gameText = this.add.text(100, 100, "Welcome to my game!");
     gameText.setInteractive({ useHandCursor: true });
     gameText.on("pointerdown", () => this.clickButton());
