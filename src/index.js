@@ -20,7 +20,7 @@ const config = {
     parent: "game",
   },
   pixelArt: true,
-  scene: [TitleScene, GameOverScene, WorldScene, UiScene],
+  scene: [TitleScene, UiScene, GameOverScene, WorldScene],
 };
 
 new Phaser.Game(config);

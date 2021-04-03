@@ -1,7 +1,3 @@
-import TitleScene from "./TitleScene";
-import UiScene from "./UiScene";
-import WorldScene from "./WorldScene";
-
 export default class GameOverScene extends Phaser.Scene {
   constructor() {
     super("gameOverScene");
@@ -15,18 +11,11 @@ export default class GameOverScene extends Phaser.Scene {
     gameOverText.on("pointerdown", () => this.clickButton());
   }
   clickButton() {
+    // const getWorldScene = this.scene.get("WorldScene");
+    // getWorldScene.scene.restart();
     this.cameras.main.fade(300, 100, 0, 0);
-    this.cameras.main.once(
-      "camerafadeoutcomplete",
-      () => {
-        this.game.destroy();
-        this.titleScene = new TitleScene();
-        this.titleScene.create();
-        this.titleScene.preload();
-
-        this.scene.start("TitleScene");
-      },
-      this
-    );
+    this.cameras.main.once("camerafadeoutcomplete", () => {
+      this.scene.start("titleScene");
+    });
   }
 }

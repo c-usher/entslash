@@ -243,7 +243,7 @@ export default class WorldScene extends Phaser.Scene {
     if (hero.hp <= 0) {
       this.cameras.main.fade(300, 100, 0, 0);
       this.cameras.main.once("camerafadeoutcomplete", () => {
-        this.scene.switch("gameOverScene");
+        this.scene.start("gameOverScene");
       });
     }
   } //handleBeingCollision

@@ -7,13 +7,14 @@ export default class TitleScene extends Phaser.Scene {
   } //preload
   create() {
     const gameText = this.add.text(100, 100, "Welcome to my game!");
+
     gameText.setInteractive({ useHandCursor: true });
     gameText.on("pointerdown", () => this.clickButton());
   } //create
   clickButton() {
     this.cameras.main.fade(300, 100, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => {
-      this.scene.switch("WorldScene");
+      this.scene.start("WorldScene");
     });
   } //click button
 } // Class
