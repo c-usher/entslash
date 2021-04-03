@@ -99,7 +99,9 @@ export default class WorldScene extends Phaser.Scene {
       e.body.setCollideWorldBounds(true);
       this.enemies.add(e); //This adds the enemy into the group enemies.
     }
+
     this.physics.add.collider(this.enemies, midLayer);
+
     this.physics.add.overlap(
       this.hero,
       this.enemies,
@@ -107,6 +109,7 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     ); //When the Hero and the Enemy from enemies group overlap it will call handle collision method
+
     this.physics.add.overlap(
       this.hero,
       this.bigEnemy,
@@ -119,6 +122,7 @@ export default class WorldScene extends Phaser.Scene {
     this.keys = this.input.keyboard.addKeys({
       space: "SPACE",
     });
+
     this.projectiles = new Projectiles(this); //Creates Black Holes
     //For each entry in this.projectiles.children.entires set entry.dmg to 10. Sets damage for black holes.
     this.projectiles.children.entries.forEach((entry) => {
@@ -132,6 +136,7 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     );
+
     this.physics.add.overlap(
       this.projectiles,
       this.enemies,
@@ -140,9 +145,11 @@ export default class WorldScene extends Phaser.Scene {
       this
     );
   } //create;
+
   handleProjectileWorldCollision(projectile) {
     this.projectiles.killAndHide(projectile); //sets active to false and visible to false
   } // handleProjectileWorldCollision
+
   handleProjectileEnemyCollision(enemy, projectile) {
     if (projectile.active) {
       enemy.hp -= projectile.dmg;

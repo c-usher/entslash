@@ -20,7 +20,7 @@ const config = {
     autoCenter: Phaser.DOM.CENTER_BOTH,
     parent: "game",
   },
-  pixelArt: true,
+  pixelArt: true, //Stops Phaser from trying to smooth out the images
   scene: [Preloader, TitleScene, UiScene, GameOverScene, WorldScene],
 };
 
