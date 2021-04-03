@@ -149,7 +149,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemies = this.add.group();
     //Spawn enemies until i > 20
     for (let i = 0; i < 10; i++) {
-      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 1, 50); //Will spawn enemy starting at 200 and then 20 * i +200 after that
+      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 10, 50); //Will spawn enemy starting at 200 and then 20 * i +200 after that
       e.body.setCollideWorldBounds(true);
       this.enemies.add(e); //This adds the enemy into the group enemies.
     }
@@ -243,7 +243,7 @@ export default class WorldScene extends Phaser.Scene {
     if (hero.hp <= 0) {
       this.cameras.main.fade(300, 100, 0, 0);
       this.cameras.main.once("camerafadeoutcomplete", () => {
-        this.scene.restart();
+        this.scene.switch("gameOverScene");
       });
     }
   } //handleBeingCollision
