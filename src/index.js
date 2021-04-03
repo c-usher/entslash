@@ -3,6 +3,7 @@ import WorldScene from "./javascript/classes/scenes/WorldScene";
 import UiScene from "./javascript/classes/scenes/UiScene";
 import TitleScene from "./javascript/classes/scenes/TitleScene";
 import GameOverScene from "./javascript/classes/scenes/GameOverScene";
+import Preloader from "./javascript/classes/Preloader";
 
 const config = {
   width: 1280,
@@ -20,7 +21,7 @@ const config = {
     parent: "game",
   },
   pixelArt: true,
-  scene: [TitleScene, UiScene, GameOverScene, WorldScene],
+  scene: [Preloader, TitleScene, UiScene, GameOverScene, WorldScene],
 };
 
 new Phaser.Game(config);

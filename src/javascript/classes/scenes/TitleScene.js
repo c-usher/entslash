@@ -2,13 +2,7 @@ export default class TitleScene extends Phaser.Scene {
   constructor() {
     super("titleScene");
   } // Constructor
-  preload() {
-    this.cameras.main.setBackgroundColor(0xff00ff);
-    this.load.image("gameLogo", "/src/assets/game_logo.png");
-    this.load.image("titleBg", "/src/assets/titleScene.png");
-    this.load.image("playButton", "/src/assets/play_button.png");
-    this.load.image("exitButton", "/src/assets/exit_button.png");
-  } //preload
+
   create() {
     const titleBG = this.add
       .image(0, 0, "titleBg")

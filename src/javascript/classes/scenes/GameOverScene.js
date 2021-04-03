@@ -2,12 +2,6 @@ export default class GameOverScene extends Phaser.Scene {
   constructor() {
     super("gameOverScene");
   } // Constructor
-  preload() {
-    this.cameras.main.setBackgroundColor(0xff00ff);
-    this.load.image("gameOverLogo", "/src/assets/you_died_logo.png");
-    this.load.image("gameOverBg", "/src/assets/game_over_scene.png");
-    this.load.image("restartButton", "/src/assets/restart.png");
-  } //Preload
   create() {
     const gameOverBg = this.add
       .image(0, 0, "gameOverBg")
@@ -31,7 +25,7 @@ export default class GameOverScene extends Phaser.Scene {
 
     restartButton.setInteractive({ useHandCursor: true });
     restartButton.on("pointerdown", () => this.clickButton());
-  }
+  } //Create
   clickButton() {
     // const getWorldScene = this.scene.get("WorldScene");
     // getWorldScene.scene.restart();
@@ -39,5 +33,5 @@ export default class GameOverScene extends Phaser.Scene {
     this.cameras.main.once("camerafadeoutcomplete", () => {
       this.scene.start("titleScene");
     });
-  }
-}
+  } //clickButton
+} //Class
