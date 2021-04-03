@@ -4,10 +4,11 @@ export default class TitleScene extends Phaser.Scene {
   } // Constructor
   preload() {
     this.cameras.main.setBackgroundColor(0xff00ff);
+    this.load.image("titleBg", "/src/assets/titleScene.png");
   } //preload
   create() {
+    const titleBG = this.add.image(0, 0, "titleBg").setOrigin(0);
     const gameText = this.add.text(100, 100, "Welcome to my game!");
-
     gameText.setInteractive({ useHandCursor: true });
     gameText.on("pointerdown", () => this.clickButton());
   } //create
