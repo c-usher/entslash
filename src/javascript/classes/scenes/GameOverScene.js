@@ -9,19 +9,17 @@ export default class GameOverScene extends Phaser.Scene {
       .setDisplaySize(1280, 720);
 
     const gameOverLogo = this.add
-      .image(100, -100, "gameOverLogo")
+      .image(330, 100, "gameOverLogo")
       .setOrigin(0)
-      .setDisplaySize(1200, 1000);
+      .setScale(1);
 
     const restartButton = this.add
-      .image(200, 150, "restartButton")
+      .image(473, 250, "restartButton")
       .setOrigin(0)
-      .setDisplaySize(800, 600);
+      .setScale(0.5);
 
-    const exitButton = this.add
-      .image(175, 240, "exitButton")
-      .setOrigin(0)
-      .setDisplaySize(800, 600);
+    const exitButton = this.add.image(473, 300, "exitButton").setOrigin(0);
+    exitButton.setScale(0.5);
 
     restartButton.setInteractive({ useHandCursor: true });
     restartButton.on("pointerdown", () => this.clickButton());
