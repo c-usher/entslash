@@ -10,14 +10,20 @@ export default class TitleScene extends Phaser.Scene {
       .setOrigin(0)
       .setDisplaySize(1280, 720);
 
-    const gameLogo = this.add.image(200, 100, "gameLogo").setOrigin(0);
-    gameLogo.setScale(1);
+    const gameLogo = this.add
+      .image(200, 100, "gameLogo")
+      .setOrigin(0)
+      .setScale(1);
 
-    const playButton = this.add.image(370, 240, "playButton").setOrigin(0);
-    playButton.setScale(0.5);
+    const playButton = this.add
+      .image(370, 240, "playButton")
+      .setOrigin(0)
+      .setScale(0.5);
 
-    const exitButton = this.add.image(373, 300, "exitButton").setOrigin(0);
-    exitButton.setScale(0.5);
+    const exitButton = this.add
+      .image(373, 300, "exitButton")
+      .setOrigin(0)
+      .setScale(0.5);
 
     playButton.setInteractive({ useHandCursor: true });
     playButton.on("pointerdown", () => this.clickButton());
