@@ -22,6 +22,8 @@ export default class TitleScene extends Phaser.Scene {
     playButton.setInteractive({ useHandCursor: true });
     playButton.on("pointerdown", () => this.clickButton());
 
+    exitButton.setInteractive({ useHandCursor: true });
+
     let selectorSprite = this.add.sprite(100, 100, "heroSheet");
     selectorSprite.setVisible(false);
     this.anims.create({
@@ -43,6 +45,17 @@ export default class TitleScene extends Phaser.Scene {
     });
 
     playButton.on("pointerout", () => {
+      selectorSprite.setVisible(false);
+    });
+
+    exitButton.on("pointerover", () => {
+      selectorSprite.setVisible(true);
+      selectorSprite.play("selectorWalk");
+      selectorSprite.x = exitButton.x - 20;
+      selectorSprite.y = exitButton.y + 20;
+    });
+
+    exitButton.on("pointerout", () => {
       selectorSprite.setVisible(false);
     });
   } //create
