@@ -127,6 +127,14 @@ export default class WorldScene extends Phaser.Scene {
     //For each entry in this.projectiles.children.entires set entry.dmg to 10. Sets damage for black holes.
     this.projectiles.children.entries.forEach((entry) => {
       entry.dmg = this.hero.dmg;
+      entry.setCollideWorldBounds(true);
+      entry.body.onWorldBounds = true;
+      entry.body.world.on("worldbounds", (body) => {
+        if (body.gameObject === entry) {
+          entry.setActive(false);
+          entry.setVisible(false);
+        }
+      });
     });
 
     this.physics.add.collider(
@@ -147,7 +155,10 @@ export default class WorldScene extends Phaser.Scene {
   } //create;
 
   handleProjectileWorldCollision(projectile) {
-    this.projectiles.killAndHide(projectile); //sets active to false and visible to false
+    if (projectile.gameObject === this) {
+      this.setActive(false);
+      this.setVisible(false);
+    }
   } // handleProjectileWorldCollision
 
   handleProjectileEnemyCollision(enemy, projectile) {
