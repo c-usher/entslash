@@ -69,6 +69,10 @@ export default class Preloader extends Phaser.Scene {
     this.load.image("gameOverBg", "/src/assets/game_over_scene.png");
     this.load.image("restartButton", "/src/assets/restart_button.png");
 
+    //win Scene Resources <===========================
+    this.load.image("winLogo", "/src/assets/you_win_logo.png");
+
+    //Loading Scene logic <===========================
     let loadBar = this.add.graphics({
       fillStyle: {
         color: 0xffffff,
@@ -82,7 +86,6 @@ export default class Preloader extends Phaser.Scene {
         this.game.renderer.width * percent,
         50
       );
-      console.log(percent);
     });
   } //preload
   create() {

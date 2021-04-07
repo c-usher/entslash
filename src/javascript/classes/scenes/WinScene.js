@@ -1,36 +1,36 @@
-export default class TitleScene extends Phaser.Scene {
+export default class WinScene extends Phaser.Scene {
   constructor() {
-    super("titleScene");
-  } // Constructor
-
+    super("winScene");
+  } //Constructor
   create() {
-    const titleBg = this.add
+    const winBg = this.add
       .image(0, 0, "titleBg")
       .setOrigin(0)
       .setDisplaySize(1280, 720);
 
-    const gameLogo = this.add
-      .image(200, 100, "gameLogo")
+    const winLogo = this.add
+      .image(200, 100, "winLogo")
       .setOrigin(0)
       .setScale(1);
 
-    const playButton = this.add
-      .image(370, 240, "playButton")
+    const restartButton = this.add
+      .image(473, 250, "restartButton")
       .setOrigin(0)
       .setScale(0.5);
 
     const exitButton = this.add
-      .image(373, 300, "exitButton")
+      .image(473, 300, "exitButton")
       .setOrigin(0)
       .setScale(0.5);
 
-    playButton.setInteractive({ useHandCursor: true });
-    playButton.on("pointerdown", () => this.clickButton());
-
+    restartButton.setInteractive({ useHandCursor: true });
     exitButton.setInteractive({ useHandCursor: true });
+    restartButton.on("pointerdown", () => this.clickButton());
 
-    let selectorSprite = this.add.sprite(100, 100, "heroSheet");
-    selectorSprite.setVisible(false);
+    let selectorSprite = this.add
+      .sprite(100, 100, "heroSheet")
+      .setVisible(false);
+
     this.anims.create({
       key: "selectorWalk",
       frameRate: 8,
@@ -41,15 +41,14 @@ export default class TitleScene extends Phaser.Scene {
       }),
     });
 
-    //When the Player hovers over the playButton choicesSprite will be set to visible. It will show up to the left of the button.
-    playButton.on("pointerover", () => {
+    restartButton.on("pointerover", () => {
       selectorSprite.setVisible(true);
       selectorSprite.play("selectorWalk");
-      selectorSprite.x = playButton.x - 20;
-      selectorSprite.y = playButton.y + 20;
+      selectorSprite.x = restartButton.x - 20;
+      selectorSprite.y = restartButton.y + 20;
     });
 
-    playButton.on("pointerout", () => {
+    restartButton.on("pointerout", () => {
       selectorSprite.setVisible(false);
     });
 
@@ -63,11 +62,13 @@ export default class TitleScene extends Phaser.Scene {
     exitButton.on("pointerout", () => {
       selectorSprite.setVisible(false);
     });
-  } //create
+  } //Create
   clickButton() {
+    // const getWorldScene = this.scene.get("WorldScene");
+    // getWorldScene.scene.restart();
     this.cameras.main.fade(300, 100, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => {
-      this.scene.start("WorldScene");
+      this.scene.start("titleScene");
     });
-  } //click button
-} // Class
+  } //clickButton
+} //Class

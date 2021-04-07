@@ -4,6 +4,7 @@ import UiScene from "./javascript/classes/scenes/UiScene";
 import TitleScene from "./javascript/classes/scenes/TitleScene";
 import GameOverScene from "./javascript/classes/scenes/GameOverScene";
 import Preloader from "./javascript/classes/Preloader";
+import WinScene from "./javascript/classes/scenes/WinScene";
 
 const config = {
   width: 1280,
@@ -21,7 +22,7 @@ const config = {
     parent: "game",
   },
   pixelArt: true, //Stops Phaser from trying to smooth out the images
-  scene: [Preloader, TitleScene, UiScene, GameOverScene, WorldScene],
+  scene: [Preloader, TitleScene, UiScene, WinScene, GameOverScene, WorldScene],
 };
 
 new Phaser.Game(config);
