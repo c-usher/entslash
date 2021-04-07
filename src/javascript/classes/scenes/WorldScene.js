@@ -79,7 +79,7 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, 1600, 1600);
 
     //Creates Hero from Hero.js
-    this.hero = new Hero(this, 400, 200, "heroSheet", 10);
+    this.hero = new Hero(this, 400, 200, "heroSheet", 100);
     this.hero.scale = 1.6;
     this.physics.add.collider(this.hero, midLayer);
     this.hero.body.setCollideWorldBounds(true);
@@ -126,7 +126,7 @@ export default class WorldScene extends Phaser.Scene {
     this.projectiles = new Projectiles(this); //Creates Black Holes
     //For each entry in this.projectiles.children.entires set entry.dmg to 10. Sets damage for black holes.
     this.projectiles.children.entries.forEach((entry) => {
-      entry.dmg = 10;
+      entry.dmg = this.hero.dmg;
     });
 
     this.physics.add.collider(
@@ -164,6 +164,8 @@ export default class WorldScene extends Phaser.Scene {
       });
       if (enemy.hp <= 0) {
         enemy.setTint(0x000000);
+        this.hero.points += 1;
+
         this.time.addEvent({
           delay: 350,
           callback: () => {
@@ -174,7 +176,14 @@ export default class WorldScene extends Phaser.Scene {
           loop: false,
         });
       }
+      console.log(this.hero.points);
       projectile.recycle();
+    }
+    if (this.hero.points >= 10) {
+      this.cameras.main.fade(300, 100, 0, 0);
+      this.cameras.main.once("camerafadeoutcomplete", () => {
+        this.scene.start("gameOverScene");
+      });
     }
   } //handleProjectileEnemyCollision
 
@@ -192,7 +201,6 @@ export default class WorldScene extends Phaser.Scene {
       callbackScope: this,
       loop: false,
     });
-    enemy.killed();
     if (hero.hp <= 0) {
       this.cameras.main.fade(300, 100, 0, 0);
       this.cameras.main.once("camerafadeoutcomplete", () => {

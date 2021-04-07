@@ -38,7 +38,7 @@ export class Projectiles extends Phaser.Physics.Arcade.Group {
   constructor(scene) {
     super(scene.physics.world, scene);
     this.createMultiple({
-      frameQuantity: 10,
+      frameQuantity: 1000,
       key: "blackHole",
       collideWorldBounds: true,
       active: false,
