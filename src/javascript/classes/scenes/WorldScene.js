@@ -79,14 +79,14 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, 1600, 1600);
 
     //Creates Hero from Hero.js
-    this.hero = new Hero(this, 400, 200, "heroSheet", 100);
+    this.hero = new Hero(this, 400, 200, "heroSheet", 10);
     this.hero.scale = 1.6;
     this.physics.add.collider(this.hero, midLayer);
     this.hero.body.setCollideWorldBounds(true);
     this.cameras.main.startFollow(this.hero);
 
     //Creates Enemy from Enemy.js
-    this.bigEnemy = new Enemy(this, 480, 200, "enemyTwoSheet", 5, 100);
+    this.bigEnemy = new Enemy(this, 480, 200, "enemyTwoSheet", 5, 100, 5);
     this.bigEnemy.scale = 1.6;
     this.bigEnemy.body.setCollideWorldBounds(true);
     this.physics.add.collider(this.bigEnemy, midLayer);
@@ -94,8 +94,8 @@ export default class WorldScene extends Phaser.Scene {
     //Creates group of enemies
     this.enemies = this.add.group();
     //Spawn enemies until i > 20
-    for (let i = 0; i < 100; i++) {
-      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 10, 50); //Will spawn enemy starting at 200 and then 20 * i +200 after that
+    for (let i = 0; i < 30; i++) {
+      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 10, 50, 1); //Will spawn enemy starting at 200 and then 20 * i +200 after that
       e.body.setCollideWorldBounds(true);
       this.enemies.add(e); //This adds the enemy into the group enemies.
     }
@@ -152,6 +152,14 @@ export default class WorldScene extends Phaser.Scene {
       null,
       this
     );
+
+    this.physics.add.overlap(
+      this.projectiles,
+      this.bigEnemy,
+      this.handleProjectileEnemyCollision,
+      null,
+      this
+    );
   } //create;
 
   handleProjectileWorldCollision(projectile) {
@@ -175,7 +183,8 @@ export default class WorldScene extends Phaser.Scene {
       });
       if (enemy.hp <= 0) {
         enemy.setTint(0x000000);
-        this.hero.points += 1;
+        this.hero.points += enemy.worth;
+        console.log(this.hero.points);
 
         this.time.addEvent({
           delay: 350,
@@ -187,7 +196,6 @@ export default class WorldScene extends Phaser.Scene {
           loop: false,
         });
       }
-      console.log(this.hero.points);
       projectile.recycle();
     }
     if (this.hero.points >= 10) {
