@@ -25,6 +25,7 @@ export default class GameOverScene extends Phaser.Scene {
 
     let selectorSprite = this.add.sprite(100, 100, "heroSheet");
     selectorSprite.setVisible(false);
+
     this.anims.create({
       key: "selectorWalk",
       frameRate: 8,

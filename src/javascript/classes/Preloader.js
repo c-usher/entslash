@@ -68,6 +68,22 @@ export default class Preloader extends Phaser.Scene {
     this.load.image("gameOverLogo", "/src/assets/you_died_logo.png");
     this.load.image("gameOverBg", "/src/assets/game_over_scene.png");
     this.load.image("restartButton", "/src/assets/restart_button.png");
+
+    let loadBar = this.add.graphics({
+      fillStyle: {
+        color: 0xffffff,
+      },
+    });
+
+    this.load.on("progress", (percent) => {
+      loadBar.fillRect(
+        0,
+        this.game.renderer.height / 2,
+        this.game.renderer.width * percent,
+        50
+      );
+      console.log(percent);
+    });
   } //preload
   create() {
     this.scene.start("preload");

@@ -4,6 +4,7 @@ export default class Hero extends Being {
     super(scene, x, y, textureKey, "Hero");
 
     this.hp = 10;
+    this.points = 0;
     const animsFrameRate = 8;
     const anims = scene.anims;
     this.facing = "down";
