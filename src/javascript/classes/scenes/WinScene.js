@@ -9,7 +9,7 @@ export default class WinScene extends Phaser.Scene {
       .setDisplaySize(1280, 720);
 
     const winLogo = this.add
-      .image(200, 100, "winLogo")
+      .image(330, 100, "winLogo")
       .setOrigin(0)
       .setScale(1);
 
