@@ -25,9 +25,12 @@ export default class TitleScene extends Phaser.Scene {
       .setScale(0.5);
 
     playButton.setInteractive({ useHandCursor: true });
-    playButton.on("pointerdown", () => this.clickButton());
+    playButton.on("pointerdown", () => this.clickPlayButton());
 
     exitButton.setInteractive({ useHandCursor: true });
+    exitButton.on("pointerdown", () => {
+      this.clickExitButton();
+    });
 
     let selectorSprite = this.add.sprite(100, 100, "heroSheet");
     selectorSprite.setVisible(false);
@@ -64,10 +67,16 @@ export default class TitleScene extends Phaser.Scene {
       selectorSprite.setVisible(false);
     });
   } //create
-  clickButton() {
-    this.cameras.main.fade(300, 100, 0, 0);
+  clickPlayButton() {
+    this.cameras.main.fade(300, 0, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => {
       this.scene.start("WorldScene");
     });
-  } //click button
+  } //clickPlayButton
+  clickExitButton() {
+    this.cameras.main.fade(300, 0, 0, 0);
+    this.cameras.main.once("camerafadeoutcomplete", () => {
+      this.game.destroy();
+    });
+  } //clickExitButton
 } // Class

@@ -25,7 +25,8 @@ export default class WinScene extends Phaser.Scene {
 
     restartButton.setInteractive({ useHandCursor: true });
     exitButton.setInteractive({ useHandCursor: true });
-    restartButton.on("pointerdown", () => this.clickButton());
+    restartButton.on("pointerdown", () => this.clickRestartButton());
+    exitButton.on("pointdown", () => this.clickExitButton());
 
     let selectorSprite = this.add
       .sprite(100, 100, "heroSheet")
@@ -63,12 +64,19 @@ export default class WinScene extends Phaser.Scene {
       selectorSprite.setVisible(false);
     });
   } //Create
-  clickButton() {
+  clickRestartButton() {
     // const getWorldScene = this.scene.get("WorldScene");
     // getWorldScene.scene.restart();
-    this.cameras.main.fade(300, 100, 0, 0);
+    this.cameras.main.fade(300, 0, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => {
       this.scene.start("titleScene");
     });
-  } //clickButton
+  } //clickRestartButton
+
+  clickExitButton() {
+    this.cameras.main.fade(300, 0, 0, 0);
+    this.cameras.main.once("camerafadeoutcomplete", () => {
+      this.game.destroy();
+    });
+  } //clickExitButton;
 } //Class

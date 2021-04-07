@@ -37,9 +37,12 @@ export default class GameOverScene extends Phaser.Scene {
     });
 
     restartButton.setInteractive({ useHandCursor: true });
-    restartButton.on("pointerdown", () => this.clickButton());
+    restartButton.on("pointerdown", () => this.clickRestartButton());
 
     exitButton.setInteractive({ useHandCursor: true });
+    exitButton.on("pointerdown", () => {
+      this.clickExitButton();
+    });
 
     //When the Player hovers over the playButton choicesSprite will be set to visible. It will show up to the left of the button.
     restartButton.on("pointerover", () => {
@@ -64,12 +67,19 @@ export default class GameOverScene extends Phaser.Scene {
       selectorSprite.setVisible(false);
     });
   } //Create
-  clickButton() {
+  clickRestartButton() {
     // const getWorldScene = this.scene.get("WorldScene");
     // getWorldScene.scene.restart();
-    this.cameras.main.fade(300, 100, 0, 0);
+    this.cameras.main.fade(300, 0, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => {
       this.scene.start("titleScene");
     });
-  } //clickButton
+  } //clickRestartButton
+
+  clickExitButton() {
+    this.cameras.main.fade(300, 0, 0, 0);
+    this.cameras.main.once("camerafadeoutcomplete", () => {
+      this.game.destroy();
+    });
+  } //clickExitButton
 } //Class

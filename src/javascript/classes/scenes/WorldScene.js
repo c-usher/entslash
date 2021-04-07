@@ -10,7 +10,7 @@ export default class WorldScene extends Phaser.Scene {
   } //Constructor
   preload() {
     this.cursors;
-    this.cameras.main.setBackgroundColor(0x9900e3);
+    this.cameras.main.setBackgroundColor(0x000000);
     this.cameras.main.setBounds();
 
     this.hero;
