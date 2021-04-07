@@ -4,6 +4,13 @@ export class Projectile extends Phaser.Physics.Arcade.Sprite {
     this.x = 200;
     this.y = 200;
   } //Constructor
+
+  update() {
+    const blocked = this.body.blocked;
+    if (blocked.up || blocked.down || blocked.left || blocked.right) {
+      this.recycle();
+    }
+  }
   cast(x, y, dir) {
     this.body.reset(x, y);
     this.setActive(true);

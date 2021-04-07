@@ -253,5 +253,11 @@ export default class WorldScene extends Phaser.Scene {
         child.update(); //Calls update function for each child of enemies.
       }
     });
+
+    this.projectiles.children.iterate((child) => {
+      if (child.active) {
+        child.update();
+      }
+    });
   } //Update
 } //Class
