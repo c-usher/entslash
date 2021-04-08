@@ -72,7 +72,9 @@ export default class TitleScene extends Phaser.Scene {
   clickPlayButton() {
     this.cameras.main.fade(300, 0, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => {
+      const uiScene = this.scene.get("UiScene");
       this.scene.start("WorldScene");
+      uiScene.scene.restart();
     });
   } //clickPlayButton
   clickExitButton() {
