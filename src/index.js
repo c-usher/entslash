@@ -22,7 +22,7 @@ const config = {
     parent: "game",
   },
   pixelArt: true, //Stops Phaser from trying to smooth out the images
-  scene: [Preloader, TitleScene, UiScene, WinScene, GameOverScene, WorldScene],
+  scene: [Preloader, TitleScene, WinScene, GameOverScene, WorldScene, UiScene],
 };
 
 new Phaser.Game(config);
