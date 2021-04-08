@@ -3,7 +3,7 @@ export default class Hero extends Being {
   constructor(scene, x, y, textureKey, dmg) {
     super(scene, x, y, textureKey, "Hero");
 
-    this.hp = 300;
+    this.hp = 10; //If you change this the UiScene Potions quantity needs to be changed
     this.dmg = dmg;
     this.points = 0;
     const animsFrameRate = 8;
