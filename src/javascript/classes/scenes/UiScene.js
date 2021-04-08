@@ -15,12 +15,27 @@ export default class UiScene extends Phaser.Scene {
       key: "fullBottle",
       setXY: {
         x: 10,
-        y: 700,
+        y: 20,
+        stepX: 25,
+      },
+      quantity: 10,
+    });
+
+    this.scoreTrackers = this.add.group({
+      classType: Phaser.GameObjects.Image,
+    });
+
+    this.scoreTrackers.createMultiple({
+      key: "emptyTracker",
+      setXY: {
+        x: 10,
+        y: 55,
         stepX: 25,
       },
       quantity: 10,
     });
     EventsCenter.on("playerDamaged", this.handleHpChange, this);
+    EventsCenter.on("playerScored", this.handleScoreChange, this);
   } //Create
 
   handleHpChange(hp) {
@@ -33,4 +48,15 @@ export default class UiScene extends Phaser.Scene {
       }
     });
   } //handleHpChange
+
+  handleScoreChange(score) {
+    this.scoreTrackers.children.each((object, index) => {
+      const scoreTrackers = object;
+      if (index < score) {
+        scoreTrackers.setTexture("fullTracker");
+      } else {
+        scoreTrackers.setTexture("emptyTracker");
+      }
+    });
+  }
 } //Class

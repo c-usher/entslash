@@ -61,6 +61,16 @@ export default class Preloader extends Phaser.Scene {
     this.load.image("fullBottle", "/src/assets/sprites/hero/full_bottle.png");
     this.load.image("emptyBottle", "/src/assets/sprites/hero/empty_bottle.png");
 
+    //Load Score Tracker Images
+    this.load.image(
+      "fullTracker",
+      "/src/assets/sprites/hero/full_score_tracker.png"
+    );
+    this.load.image(
+      "emptyTracker",
+      "/src/assets/sprites/hero/empty_score_tracker.png"
+    );
+
     //Load BlackHole Image
     this.load.image("blackHole", "/src/assets/sprites/hero/Black_hole.png");
 

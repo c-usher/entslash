@@ -184,6 +184,7 @@ export default class WorldScene extends Phaser.Scene {
       if (enemy.hp <= 0) {
         enemy.setTint(0x000000);
         this.hero.points += enemy.worth;
+        EventsCenter.emit("playerScored", this.hero.points);
         console.log(this.hero.points);
 
         this.time.addEvent({
