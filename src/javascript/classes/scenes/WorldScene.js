@@ -23,7 +23,8 @@ export default class WorldScene extends Phaser.Scene {
   } //preload;
 
   create() {
-    this.scene.run("UiScene"); // Runs Scene parallel to WorldScene
+    // this.scene.run("UiScene"); // Runs Scene parallel to WorldScene
+    this.scene.wake("UiScene");
     //Creates Map and Tiles
     const map = this.make.tilemap({
       key: "map",
@@ -86,7 +87,7 @@ export default class WorldScene extends Phaser.Scene {
     this.cameras.main.startFollow(this.hero);
 
     //Creates Enemy from Enemy.js
-    this.bigEnemy = new Enemy(this, 480, 200, "enemyTwoSheet", 5, 100, 5);
+    this.bigEnemy = new Enemy(this, 780, 700, "enemyTwoSheet", 5, 100, 5);
     this.bigEnemy.scale = 1.6;
     this.bigEnemy.body.setCollideWorldBounds(true);
     this.physics.add.collider(this.bigEnemy, midLayer);
@@ -95,7 +96,7 @@ export default class WorldScene extends Phaser.Scene {
     this.enemies = this.add.group();
     //Spawn enemies until i > 20
     for (let i = 0; i < 30; i++) {
-      const e = new Enemy(this, 200 + 20 * i, 280, "enemyTwoSheet", 10, 50, 1); //Will spawn enemy starting at 200 and then 20 * i +200 after that
+      const e = new Enemy(this, 700 + 20 * i, 680, "enemyTwoSheet", 10, 50, 1); //Will spawn enemy starting at 200 and then 20 * i +200 after that
       e.body.setCollideWorldBounds(true);
       this.enemies.add(e); //This adds the enemy into the group enemies.
     }
@@ -185,7 +186,6 @@ export default class WorldScene extends Phaser.Scene {
         enemy.setTint(0x000000);
         this.hero.points += enemy.worth;
         EventsCenter.emit("playerScored", this.hero.points);
-        console.log(this.hero.points);
 
         this.time.addEvent({
           delay: 350,
@@ -203,6 +203,7 @@ export default class WorldScene extends Phaser.Scene {
       this.cameras.main.fade(300, 100, 0, 0);
       this.cameras.main.once("camerafadeoutcomplete", () => {
         this.scene.start("winScene");
+        this.scene.sleep("UiScene");
       });
     }
   } //handleProjectileEnemyCollision
@@ -225,6 +226,7 @@ export default class WorldScene extends Phaser.Scene {
       this.cameras.main.fade(300, 100, 0, 0);
       this.cameras.main.once("camerafadeoutcomplete", () => {
         this.scene.start("gameOverScene");
+        this.scene.sleep("UiScene");
       });
     }
   } //handleBeingCollision

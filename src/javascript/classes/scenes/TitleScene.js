@@ -4,6 +4,8 @@ export default class TitleScene extends Phaser.Scene {
   } // Constructor
 
   create() {
+    this.scene.run("UiScene"); // Runs Scene parallel to WorldScene
+    this.scene.sleep("UiScene");
     const titleBg = this.add
       .image(0, 0, "titleBg")
       .setOrigin(0)
