@@ -72,7 +72,7 @@ export default class Preloader extends Phaser.Scene {
     );
 
     //Load BlackHole Image
-    this.load.image("blackHole", "/src/assets/sprites/hero/Black_hole.png");
+    this.load.image("blackHole", "/src/assets/sprites/hero/black_hole.png");
 
     //Game Over Scene Resources <===========================
     this.load.image("gameOverLogo", "/src/assets/logos/you_died_logo.png");
