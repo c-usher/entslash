@@ -1,0 +1,272 @@
+{
+	"textures": [
+		{
+			"image": "enemy_two_sprite.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 115,
+				"h": 53
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "enemy_two_down/01",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 1,
+						"w": 17,
+						"h": 21
+					},
+					"frame": {
+						"x": 2,
+						"y": 2,
+						"w": 17,
+						"h": 21
+					}
+				},
+				{
+					"filename": "enemy_two_down/02",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 15,
+						"h": 22
+					},
+					"frame": {
+						"x": 23,
+						"y": 2,
+						"w": 15,
+						"h": 22
+					}
+				},
+				{
+					"filename": "enemy_two_down/03",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 17,
+						"h": 22
+					},
+					"frame": {
+						"x": 42,
+						"y": 2,
+						"w": 17,
+						"h": 22
+					}
+				},
+				{
+					"filename": "enemy_two_left/01",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 14,
+						"h": 23
+					},
+					"frame": {
+						"x": 63,
+						"y": 2,
+						"w": 14,
+						"h": 23
+					}
+				},
+				{
+					"filename": "enemy_two_left/02",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 14,
+						"h": 21
+					},
+					"frame": {
+						"x": 81,
+						"y": 2,
+						"w": 14,
+						"h": 21
+					}
+				},
+				{
+					"filename": "enemy_two_left/03",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 14,
+						"h": 21
+					},
+					"frame": {
+						"x": 99,
+						"y": 2,
+						"w": 14,
+						"h": 21
+					}
+				},
+				{
+					"filename": "enemy_two_right/01",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 14,
+						"h": 20
+					},
+					"frame": {
+						"x": 2,
+						"y": 29,
+						"w": 14,
+						"h": 20
+					}
+				},
+				{
+					"filename": "enemy_two_right/02",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 14,
+						"h": 20
+					},
+					"frame": {
+						"x": 20,
+						"y": 29,
+						"w": 14,
+						"h": 20
+					}
+				},
+				{
+					"filename": "enemy_two_right/03",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 1,
+						"w": 13,
+						"h": 20
+					},
+					"frame": {
+						"x": 38,
+						"y": 29,
+						"w": 13,
+						"h": 20
+					}
+				},
+				{
+					"filename": "enemy_two_up/01",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1,
+						"w": 16,
+						"h": 21
+					},
+					"frame": {
+						"x": 55,
+						"y": 29,
+						"w": 16,
+						"h": 21
+					}
+				},
+				{
+					"filename": "enemy_two_up/02",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 16,
+						"h": 22
+					},
+					"frame": {
+						"x": 75,
+						"y": 29,
+						"w": 16,
+						"h": 22
+					}
+				},
+				{
+					"filename": "enemy_two_up/03",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 20,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 17,
+						"h": 22
+					},
+					"frame": {
+						"x": 95,
+						"y": 29,
+						"w": 17,
+						"h": 22
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:69bd11524e24a31c71692b1b834fa619:7584f2d7808482dd9dc4940d074a34e0:cc7d738ef5f98e64280979ec8f5ab419$"
+	}
+}

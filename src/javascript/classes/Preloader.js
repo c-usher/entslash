@@ -4,10 +4,10 @@ export default class Preloader extends Phaser.Scene {
   }
   preload() {
     //Loads Title Scene Resources <===========================
-    this.load.image("gameLogo", "/src/assets/game_logo.png");
-    this.load.image("titleBg", "/src/assets/titleScene.png");
-    this.load.image("playButton", "/src/assets/play_button.png");
-    this.load.image("exitButton", "/src/assets/exit_button.png");
+    this.load.image("gameLogo", "/src/assets/logos/game_logo.png");
+    this.load.image("titleBg", "/src/assets/scene_backgrounds/titleScene.png");
+    this.load.image("playButton", "/src/assets/buttons/play_button.png");
+    this.load.image("exitButton", "/src/assets/buttons/exit_button.png");
 
     //Loads World Scene Resources <===========================
     //Loads Map
@@ -58,29 +58,32 @@ export default class Preloader extends Phaser.Scene {
     );
 
     //Load Bottle Images
-    this.load.image("fullBottle", "/src/assets/sprites/hero/full_bottle.png");
-    this.load.image("emptyBottle", "/src/assets/sprites/hero/empty_bottle.png");
+    this.load.image("fullBottle", "/src/assets/trackers/full_bottle.png");
+    this.load.image("emptyBottle", "/src/assets/trackers/empty_bottle.png");
 
     //Load Score Tracker Images
     this.load.image(
       "fullTracker",
-      "/src/assets/sprites/hero/full_score_tracker.png"
+      "/src/assets/trackers/full_score_tracker.png"
     );
     this.load.image(
       "emptyTracker",
-      "/src/assets/sprites/hero/empty_score_tracker.png"
+      "/src/assets/trackers/empty_score_tracker.png"
     );
 
     //Load BlackHole Image
     this.load.image("blackHole", "/src/assets/sprites/hero/Black_hole.png");
 
     //Game Over Scene Resources <===========================
-    this.load.image("gameOverLogo", "/src/assets/you_died_logo.png");
-    this.load.image("gameOverBg", "/src/assets/game_over_scene.png");
-    this.load.image("restartButton", "/src/assets/restart_button.png");
+    this.load.image("gameOverLogo", "/src/assets/logos/you_died_logo.png");
+    this.load.image(
+      "gameOverBg",
+      "/src/assets/scene_backgrounds/game_over_scene.png"
+    );
+    this.load.image("restartButton", "/src/assets/buttons/restart_button.png");
 
     //win Scene Resources <===========================
-    this.load.image("winLogo", "/src/assets/you_win_logo.png");
+    this.load.image("winLogo", "/src/assets/logos/you_win_logo.png");
 
     //Loading Scene logic <===========================
     let loadBar = this.add.graphics({

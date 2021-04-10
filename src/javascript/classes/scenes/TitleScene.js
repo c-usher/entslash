@@ -4,8 +4,8 @@ export default class TitleScene extends Phaser.Scene {
   } // Constructor
 
   create() {
-    this.scene.run("UiScene"); // Runs Scene parallel to WorldScene
-    this.scene.sleep("UiScene");
+    this.scene.run("uiScene"); // Runs Scene parallel to WorldScene
+    this.scene.sleep("uiScene");
     const titleBg = this.add
       .image(0, 0, "titleBg")
       .setOrigin(0)
@@ -72,7 +72,7 @@ export default class TitleScene extends Phaser.Scene {
   clickPlayButton() {
     this.cameras.main.fade(300, 0, 0, 0);
     this.cameras.main.once("camerafadeoutcomplete", () => {
-      const uiScene = this.scene.get("UiScene");
+      const uiScene = this.scene.get("uiScene");
       this.scene.start("WorldScene");
       uiScene.scene.restart();
     });

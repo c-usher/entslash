@@ -1,7 +1,6 @@
 import Hero from "../Hero";
 import Enemy from "../Enemy";
-import { Projectile, Projectiles } from "../Projectile";
-
+import Projectiles from "../Projectile";
 import EventsCenter from "../../events/EventsCenter";
 
 export default class WorldScene extends Phaser.Scene {

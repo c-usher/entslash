@@ -86,7 +86,6 @@ export default class Enemy extends Being {
   } //Constructor
 
   update() {
-    const { speed } = this; // Destructuring
     const enemyBlocked = this.body.blocked;
     if (
       enemyBlocked.up ||
